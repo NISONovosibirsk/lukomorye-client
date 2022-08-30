@@ -1,0 +1,12 @@
+.progress {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.fill {
+    background-color: #ED771C;
+    clip: rect(0px, 75px, 150px, 0px);
+    // clip: rect(0 3.5vw 7vw o);
+}

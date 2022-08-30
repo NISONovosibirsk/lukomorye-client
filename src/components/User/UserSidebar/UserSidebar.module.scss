@@ -1,0 +1,37 @@
+.sidebar {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% auto;
+    grid-template-areas: 
+        'header'
+        'statistics';
+    background: #F2F2F2;
+    box-shadow: 5px 1px 8px 0px rgba(48, 55, 60, 0.2);
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    padding: {
+        top: 4vh;
+    };
+    border: {
+        bottom: #545454 solid 1px;
+    };
+}
+
+.name {
+    color: #545454;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.rating {
+    color: #545454;
+    font-weight: 700;
+    font-size: 0.8rem;
+}

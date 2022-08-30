@@ -1,0 +1,23 @@
+.header {
+    display: grid;
+    grid-template-columns: auto 20%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        'bar avatar';
+    background: url('../../../assets/images/header-image.svg') no-repeat;
+    background-size: 100vw auto;
+}
+
+.controls {
+    grid-area: avatar;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
