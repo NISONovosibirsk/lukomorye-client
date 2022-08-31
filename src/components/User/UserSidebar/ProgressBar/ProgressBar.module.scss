@@ -1,7 +1,7 @@
 .progress {
     position: relative;
-    width: 7vw;
-    height: 7vw;
+    width: 6vw;
+    height: 6vw;
     border-radius: 50%;
     background: conic-gradient(#ED771C 3.6deg, #F2F2F2 0deg);
     display: flex;
@@ -11,8 +11,8 @@
     &::before {
         content: '';
         position: absolute;
-        height: 5.5vw;
-        width: 5.5vw;
+        height: 5vw;
+        width: 5vw;
         border-radius: 50%;
         background-color: #F2F2F2;;
     }
