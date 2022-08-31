@@ -1,12 +1,26 @@
 .progress {
+    position: relative;
     width: 7vw;
     height: 7vw;
     border-radius: 50%;
-    position: absolute;
-}
+    background: conic-gradient(#ED771C 3.6deg, #F2F2F2 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.fill {
-    background-color: #ED771C;
-    clip: rect(0px, 75px, 150px, 0px);
-    // clip: rect(0 3.5vw 7vw o);
+    &::before {
+        content: '';
+        position: absolute;
+        height: 5.5vw;
+        width: 5.5vw;
+        border-radius: 50%;
+        background-color: #F2F2F2;;
+    }
+
+    span {
+        position: relative;
+        font-weight: 700;
+        color: #ED771C;
+        font-size: 1.5em;
+    }
 }
