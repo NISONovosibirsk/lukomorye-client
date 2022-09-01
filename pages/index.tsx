@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const Index = () => {
     return (
         <div className='app'>
-            <h1>Home</h1>
+            <Link href={'/user'}>Пользовватель</Link>
         </div>
     );
 };

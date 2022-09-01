@@ -11,7 +11,8 @@ const SidebarItem: React.FC<Props> = ({ name, points }) => {
         <li className={styles.sidebarItem}>
             <p className={styles.name}>{name}</p>
             <div className={styles.score}>
-                <p>{`${points}/100`}</p>
+                <p className={styles.points}>{`${points}/100`}</p>
+                <StarIcon />
             </div>
         </li>
     );

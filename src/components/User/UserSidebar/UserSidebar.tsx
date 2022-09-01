@@ -1,6 +1,5 @@
 import { useAppSelector } from '../../../hooks/redux';
-import ProgressBar from './ProgressBar/ProgressBar';
-import SidebarItem from './SidebarItem/SidebarItem';
+import { ProgressBar, SidebarItem } from '../../../components';
 import styles from './UserSidebar.module.scss';
 
 const UserSidebar: React.FC = () => {
