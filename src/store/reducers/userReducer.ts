@@ -1,10 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-interface UserState {
-    name: string;
-    rating: number;
-    passedTests: Array<{ name: string; points: number }>;
-}
+import { UserState } from '../../types/reduxTypes';
 
 const initialState: UserState = {
     name: 'Роман Карлович',
