@@ -1,4 +1,4 @@
-import { UserFooter, UserHeader, UserSidebar } from '../../src/components';
+import { UserFooter, UserHeader, UserSidebar } from '../../components';
 
 import styles from './index.module.scss';
 

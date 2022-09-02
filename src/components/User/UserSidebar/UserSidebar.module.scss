@@ -14,11 +14,8 @@
     display: flex;
     gap: 1vh;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     align-items: center;
-    padding: {
-        top: 4vh;
-    };
     border: {
         bottom: #545454 solid 1px;
     };
@@ -47,9 +44,15 @@
         right: 1vw;
     };
 
-    p {
+    h4 {
         color: #545454;
         font-size: 1em;
         font-weight: 700;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2vh;
     }
 }

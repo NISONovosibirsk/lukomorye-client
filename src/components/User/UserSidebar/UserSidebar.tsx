@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../../hooks/redux';
-import { ProgressBar, SidebarItem } from '../../../components';
+import { ProgressBar, SidebarItem } from '../..';
 import styles from './UserSidebar.module.scss';
 
 const UserSidebar: React.FC = () => {
@@ -15,7 +15,7 @@ const UserSidebar: React.FC = () => {
                 </div>
             </div>
             <div className={styles.statistics}>
-                <p>Пройденные тесты</p>
+                <h4>Пройденные тесты</h4>
                 <ul>
                     {user.passedTests.map((test, index) => (
                         <SidebarItem
