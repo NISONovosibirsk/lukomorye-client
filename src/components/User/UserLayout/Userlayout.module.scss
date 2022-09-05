@@ -16,3 +16,12 @@
     grid-template-areas: 
         'sidebar content';
 }
+
+.content {
+    padding: {
+        top: 1vh;
+        bottom: 1vh;
+        left: 1.5vw;
+        right: 1.5vw;
+    };
+}

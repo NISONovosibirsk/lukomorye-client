@@ -2,14 +2,24 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import { setupStore } from '../store/store';
+import { ReactElement, ReactNode } from 'react';
+import { NextPage } from 'next';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+    getLayout?: (page: ReactElement) => ReactNode;
+};
 
-  const store = setupStore();
+type AppPropsWithLayout = AppProps & {
+    Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+    const store = setupStore();
+    const getLayout = Component.getLayout ?? (page => page);
 
     return (
         <Provider store={store}>
-            <Component {...pageProps} />
+            {getLayout(<Component {...pageProps} />)}
         </Provider>
     );
 }

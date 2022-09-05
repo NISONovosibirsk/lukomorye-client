@@ -1,18 +1,20 @@
+import { ReactElement } from 'react';
 import { UserFooter, UserHeader, UserSidebar } from '../../components';
+import UserLayout from '../../components/User/UserLayout/UserLayout';
+import type { NextPageWithLayout } from '../_app';
+import Link from 'next/link';
 
-import styles from './index.module.scss';
-
-const User = () => {
+const User: NextPageWithLayout = () => {
     return (
-        <section className={styles.user}>
-            <UserHeader />
-            <div className={styles.body}>
-                <UserSidebar />
-                <div className={styles.content}></div>
-            </div>
-            <UserFooter />
-        </section>
+        <>
+            <p>ХОМЕ</p>
+            <Link href={'user/settings'}>Настройке</Link>
+        </>
     );
+};
+
+User.getLayout = function getLayout(page: ReactElement) {
+    return <UserLayout>{page}</UserLayout>;
 };
 
 export default User;
