@@ -1,15 +1,20 @@
 import { ReactElement } from 'react';
-import { UserFooter, UserHeader, UserSidebar } from '../../components';
-import UserLayout from '../../components/User/UserLayout/UserLayout';
 import type { NextPageWithLayout } from '../_app';
-import Link from 'next/link';
+import { QuizCard, UserLayout } from '../../components';
+import { QUIZ_LIST } from '../../assets/mock';
+import styles from './index.module.scss'
 
 const User: NextPageWithLayout = () => {
+
     return (
-        <>
-            <p>ХОМЕ</p>
-            <Link href={'user/settings'}>Настройке</Link>
-        </>
+        <div className={styles.home}>
+            <h2>Рекомендуемые викторины</h2>
+            <ul>
+                {QUIZ_LIST.map((quiz, index) => (
+                    <QuizCard key={index} quiz={quiz}/>
+                ))}
+            </ul>
+        </div>
     );
 };
 

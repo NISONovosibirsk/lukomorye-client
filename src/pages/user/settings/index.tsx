@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
-import UserLayout from "../../components/User/UserLayout/UserLayout";
+import { UserLayout } from "../../../components";
+
 
 const Settings = () => {
 

@@ -1,0 +1,18 @@
+.home {
+    display: grid;
+    row-gap: 5vh;
+
+    h2 {
+        place-self: center;
+        color: #545454;
+    }
+
+    ul {
+        overflow-y: auto;
+        height: 84vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 400px);
+        gap: 2vw;
+        padding-left: 1vw;
+    }
+}
