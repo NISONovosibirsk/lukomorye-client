@@ -2,10 +2,13 @@
     height: 350px;
     width: 350px;
     display: grid;
+    row-gap: 2vh;
     place-items: center;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    padding: 1vw;
+    padding: 1vw {
+        bottom: 2vh;
+    }
     transition: transform 0.5s ease;
 
     &:hover {
@@ -18,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     align-items: center;
-    
+
     svg {
         justify-self: end;
     }

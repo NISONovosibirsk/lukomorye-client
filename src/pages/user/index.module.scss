@@ -1,6 +1,6 @@
 .home {
     display: grid;
-    row-gap: 5vh;
+    row-gap: 2.5vh;
 
     h2 {
         place-self: center;
@@ -9,10 +9,13 @@
 
     ul {
         overflow-y: auto;
-        height: 84vh;
+        height: 82vh;
         display: grid;
         grid-template-columns: repeat(auto-fit, 400px);
         gap: 2vw;
-        padding-left: 1vw;
+        padding: {
+            left: 1vw;
+            top: 1.5vh;
+        } ;
     }
 }
