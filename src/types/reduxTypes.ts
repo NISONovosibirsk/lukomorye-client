@@ -3,3 +3,7 @@ export interface UserState {
     rating: number;
     passedTests: Array<{ name: string; points: number }>;
 }
+
+export interface StatusState {
+    dropDown: boolean;
+}
