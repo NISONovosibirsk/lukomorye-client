@@ -10,7 +10,12 @@
 .controls {
     grid-area: avatar;
     display: flex;
+    column-gap: 1vw;
     align-items: center;
+
+    svg {
+        cursor: pointer;
+    }
 }
 
 .avatar {
