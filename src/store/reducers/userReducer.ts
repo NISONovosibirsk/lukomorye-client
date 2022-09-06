@@ -1,9 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { UserState } from '../../types/reduxTypes';
 
 const initialState: UserState = {
     name: 'Роман Карлович',
     rating: 70,
+    type: 'teacher',
+    photo: {},
     passedTests: [
         { name: 'Животные Сибири. Повадки белок', points: 50 },
         { name: 'Животные Сибири. Повадки белок', points: 60 },
@@ -14,7 +16,11 @@ const initialState: UserState = {
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {},
+    reducers: {
+        updateUserAvatar(state, action: PayloadAction<any>){
+            state.photo = action.payload;
+        }
+    },
 });
 
 export default userSlice.reducer;

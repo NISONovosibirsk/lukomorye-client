@@ -9,3 +9,6 @@ export { default as ColorsIcon } from './icons/quizIcons/colors-icon.svg';
 export { default as SettingsIcon } from './icons/headerIcons/settings-icon.svg';
 export { default as LogOutIcon } from './icons/headerIcons/logout-icon.svg';
 export { default as DropDownIcon } from './icons/headerIcons/dropdown-icon.svg';
+
+// Profile //
+export { default as DefaultAvatar } from './icons/profileIcons/defaultAvatar.svg';

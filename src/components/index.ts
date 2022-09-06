@@ -6,6 +6,7 @@ export { default as ProgressBar } from './User/UserSidebar/ProgressBar/ProgressB
 export { default as SidebarItem } from './User/UserSidebar/SidebarItem/SidebarItem';
 export { default as UserLayout } from './User/UserLayout/UserLayout';
 export { default as QuizCard } from './User/QuizCard/QuizCard';
+export { default as DropDown } from './User/DropDown/DropDown';
 
 // COMMON //
-export {default as Button} from './common/Button/Button';
+export { default as Button } from './common/Button/Button';

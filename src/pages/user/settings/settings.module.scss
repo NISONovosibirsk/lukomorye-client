@@ -1,0 +1,46 @@
+.settings {
+    display: grid;
+    row-gap: 2.5vh;
+
+    h2 {
+        color: #545454;
+    }
+}
+
+.header {
+    display: flex;
+    place-self: center;
+    column-gap: 1.5vw;
+    align-items: center;
+}
+
+.avatar {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background: #f5f1f1 no-repeat center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas:
+        'Photo'
+        'SelectBtn';
+    overflow: hidden;
+}
+
+.select {
+    grid-area: SelectBtn;
+    align-self: end;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url('../../../assets/icons/profileIcons/photo-icon.svg') no-repeat center #ED771C;
+    opacity: 0.7;
+
+    input {
+        visibility: hidden;
+    }
+}

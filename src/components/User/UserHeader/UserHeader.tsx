@@ -1,6 +1,7 @@
-import { DropDownIcon, LogOutIcon, SettingsIcon } from '../../../assets';
+import { DropDownIcon } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
+import DropDown from '../DropDown/DropDown';
 import styles from './UserHeader.module.scss';
 
 const Header: React.FC = () => {
@@ -16,20 +17,8 @@ const Header: React.FC = () => {
         <div className={styles.header}>
             <div className={styles.controls}>
                 <div className={styles.avatar} onClick={handleOpen}></div>
-                <DropDownIcon onClick={handleOpen}/>
-                {dropDown && (
-                    <ul className={styles.dropDown}>
-                        <h4>Ваш профиль</h4>
-                        <li>
-                            <SettingsIcon />
-                            <p>Настройки</p>
-                        </li>
-                        <li>
-                            <LogOutIcon />
-                            <p>Выйти из профиля</p>
-                        </li>
-                    </ul>
-                )}
+                <DropDownIcon onClick={handleOpen} />
+                {dropDown && <DropDown />}
             </div>
         </div>
     );
