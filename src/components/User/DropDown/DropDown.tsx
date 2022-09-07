@@ -9,7 +9,7 @@ const DropDown: React.FC = () => {
                         <h4>Ваш профиль</h4>
                         <li>
                             <SettingsIcon />
-                            <Link href={'user/settings'}>
+                            <Link href={'user/profile'}>
                                 <a>Настройки</a>
                             </Link>
                         </li>

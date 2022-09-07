@@ -1,4 +1,4 @@
-.settings {
+.profile {
     display: grid;
     row-gap: 2.5vh;
 
@@ -12,6 +12,20 @@
     place-self: center;
     column-gap: 1.5vw;
     align-items: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 2vh;
+}
+
+.generalForms {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
 }
 
 .avatar {

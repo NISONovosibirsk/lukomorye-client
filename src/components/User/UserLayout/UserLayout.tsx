@@ -4,7 +4,7 @@ import { statusSlice } from '../../../store/reducers/statusReducer';
 import styles from './Userlayout.module.scss';
 
 interface Props {
-    children: any;
+    children: React.ReactNode;
 }
 
 const UserLayout: React.FC<Props> = ({ children }) => {

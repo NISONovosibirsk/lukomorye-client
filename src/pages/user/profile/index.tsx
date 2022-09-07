@@ -1,10 +1,10 @@
-import { ChangeEvent, ReactElement } from 'react';
-import { UserLayout } from '../../../components';
+import { ReactElement } from 'react';
+import { AccountData, ProfileData, UserLayout } from '../../../components';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { userSlice } from '../../../store/reducers/userReducer';
-import styles from './settings.module.scss';
+import styles from './profile.module.scss';
 
-const Settings = () => {
+const Profile = () => {
     const { name, photo } = useAppSelector(state => state.userReducer);
     const { updateUserAvatar } = userSlice.actions;
     const dispatch = useAppDispatch();
@@ -14,15 +14,18 @@ const Settings = () => {
             let image = new FormData();
             image.append('file', e.target.files[0]);
 
-            console.log(image)
-            dispatch(updateUserAvatar(image))
+            console.log(image);
+            dispatch(updateUserAvatar(image));
         }
     };
 
     return (
-        <div className={styles.settings}>
+        <div className={styles.profile}>
             <div className={styles.header}>
-                <div className={styles.avatar} style={{backgroundImage: `url(${photo})`}}>
+                <div
+                    className={styles.avatar}
+                    style={{ backgroundImage: `url(${photo})` }}
+                >
                     <label className={styles.select}>
                         <input
                             onChange={handlePhoto}
@@ -33,13 +36,21 @@ const Settings = () => {
                 </div>
                 <h2>{name}</h2>
             </div>
-            <div className={styles.content}></div>
+            <div className={styles.content}>
+                <div className={styles.generalForms}>
+                    <ProfileData />
+                    <AccountData />
+                </div>
+                <div>
+                    TEACHER FORM
+                </div>
+            </div>
         </div>
     );
 };
 
-Settings.getLayout = function getLayout(page: ReactElement) {
+Profile.getLayout = function getLayout(page: ReactElement) {
     return <UserLayout>{page}</UserLayout>;
 };
 
-export default Settings;
+export default Profile;

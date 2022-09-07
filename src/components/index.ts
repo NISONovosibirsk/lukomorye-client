@@ -8,5 +8,12 @@ export { default as UserLayout } from './User/UserLayout/UserLayout';
 export { default as QuizCard } from './User/QuizCard/QuizCard';
 export { default as DropDown } from './User/DropDown/DropDown';
 
+// PROFILE //
+export { default as ProfileFormWrapper } from './Profile/ProfileFormWrapper/ProfileFormWrapper';
+export { default as ProfileData } from './Profile/ProfileData/ProfileData';
+export { default as AccountData } from './Profile/AccountData/AccountData';
+
 // COMMON //
 export { default as Button } from './common/Button/Button';
+export { default as Input } from './common/Input/Input';
+export { default as Select } from './common/Select/Select';
