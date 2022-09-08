@@ -8,7 +8,7 @@ const AccountData: React.FC = () => {
     const { updateUserPassword } = userSlice.actions;
     const dispatch = useAppDispatch();
 
-    const handleChangePassword = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(updateUserPassword(e.target.value));
     };
 

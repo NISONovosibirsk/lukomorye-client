@@ -3,6 +3,7 @@ import {
     AccountData,
     ProfileAvatar,
     ProfileData,
+    TeacherData,
     UserLayout,
 } from '../../../components';
 import { useAppSelector } from '../../../hooks/redux';
@@ -22,7 +23,7 @@ const Profile = () => {
                     <ProfileData />
                     <AccountData />
                 </div>
-                <div>TEACHER FORM</div>
+                <TeacherData />
             </div>
         </div>
     );

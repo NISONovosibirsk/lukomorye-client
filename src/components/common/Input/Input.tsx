@@ -8,8 +8,9 @@ interface Props {
     height?: string;
     fontSize?: string;
     placeholder?: string;
-    onChange?: () => void;
-    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string | number;
+    isScore?: boolean;
 }
 
 const Input: React.FC<Props> = ({
@@ -20,6 +21,7 @@ const Input: React.FC<Props> = ({
     onChange,
     placeholder,
     value,
+    isScore,
 }) => {
     const inputType = useRef<HTMLInputElement>(null);
 
@@ -42,7 +44,7 @@ const Input: React.FC<Props> = ({
                 ref={inputType}
                 className={`${styles.input} ${
                     type === 'password' && styles.password
-                }`}
+                } ${isScore && styles.score}`}
                 type={type}
                 style={{
                     width: `${width}`,
@@ -51,7 +53,7 @@ const Input: React.FC<Props> = ({
                 }}
                 placeholder={placeholder}
                 onChange={onChange}
-                value={value}
+                value={isScore ? `${value}/100` : value}
             />
             {type === 'password' && (
                 <ShowIcon

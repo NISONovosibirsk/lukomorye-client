@@ -2,7 +2,6 @@
     position: relative;
     display: flex;
     align-items: center;
-
 }
 
 .input {
@@ -32,14 +31,14 @@
     background: white;
 }
 
-// .edit {
-//     background: url('../../../assets/icons/profileIcons/edit-icon.svg')
-//         no-repeat white;
-//     background-position: top 50% right 10px;
-// }
+.score {
+    background: white;
+    text-align: center;
+}
 
 .showIcon {
     position: absolute;
     right: 10px;
     cursor: pointer;
+    user-select: none;
 }

@@ -1,0 +1,32 @@
+.studentsForm {
+    grid-template-rows: repeat(auto-fill, 5vh);
+
+    input {
+        font-size: 1.2em;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addStudent {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #545454;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: black;
+        scale: 1.05;
+        transition: scale 0.2s ease;
+    }
+
+    &:active {
+        color: #545454;
+    }
+}
