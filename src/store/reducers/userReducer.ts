@@ -4,7 +4,10 @@ import { UserState } from '../../types/reduxTypes';
 
 const initialState: UserState = {
     name: 'Роман Карлович',
+    post: 'Учитель',
+    grade: '1Б',
     rating: 70,
+    school: 'Гимназия № 1',
     type: 'teacher',
     photo: {},
     password: 'roman1234',
@@ -14,8 +17,8 @@ const initialState: UserState = {
         { name: 'Животные Сибири. Повадки белок', points: 100 },
     ],
     studentsList: [
-        { name: 'Кирилл Иванов', class: '1А класс', score: 55 },
-        { name: 'Юлия Петрова', class: '3В класс', score: 78 },
+        { name: 'Кирилл Иванов', grade: '1А класс', score: 55 },
+        { name: 'Юлия Петрова', grade: '3В класс', score: 78 },
     ],
 };
 
@@ -32,6 +35,18 @@ export const userSlice = createSlice({
         addStudent(state, action: PayloadAction<Student>) {
             state.studentsList.push(action.payload);
         },
+        editName(state, action: PayloadAction<string>){
+            state.name = action.payload
+        },
+        editPost(state, action: PayloadAction<string>){
+            state.post = action.payload
+        },
+        editSchool(state, action: PayloadAction<string>){
+            state.school = action.payload
+        },
+        editGrade(state, action: PayloadAction<string>){
+            state.grade = action.payload
+        }
     },
 });
 

@@ -41,4 +41,8 @@
     right: 10px;
     cursor: pointer;
     user-select: none;
+
+    &:active {
+        scale: 1.1;
+    }
 }

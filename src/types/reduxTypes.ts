@@ -3,6 +3,9 @@ import { Student } from "./profileTypes";
 export interface UserState {
     name: string;
     rating: number;
+    post: string;
+    grade: string;
+    school: string;
     type: string;
     photo: any;
     password: string;

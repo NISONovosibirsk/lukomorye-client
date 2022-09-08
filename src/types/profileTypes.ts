@@ -1,5 +1,5 @@
 export interface Student {
     name: string;
-    class: string;
+    grade: string;
     score: number;
 }

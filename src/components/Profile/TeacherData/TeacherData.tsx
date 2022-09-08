@@ -11,7 +11,7 @@ const TeacherData: React.FC = () => {
     ('');
 
     const handleAdd = () => {
-        dispatch(addStudent({ name: '', class: '', score: 0 }));
+        dispatch(addStudent({ name: '', grade: '', score: 0 }));
     };
 
     return (
