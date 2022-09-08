@@ -1,0 +1,31 @@
+.avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #f5f1f1 no-repeat center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas:
+        'Photo'
+        'SelectBtn';
+    overflow: hidden;
+}
+
+.select {
+    grid-area: SelectBtn;
+    align-self: end;
+    width: 100px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url('../../../assets/icons/profileIcons/photo-icon.svg')
+        no-repeat center #ed771c;
+    opacity: 0.65;
+
+    input {
+        visibility: hidden;
+    }
+}

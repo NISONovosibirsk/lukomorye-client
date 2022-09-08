@@ -6,6 +6,7 @@ const initialState: UserState = {
     rating: 70,
     type: 'teacher',
     photo: {},
+    password: 'roman1234',
     passedTests: [
         { name: 'Животные Сибири. Повадки белок', points: 50 },
         { name: 'Животные Сибири. Повадки белок', points: 60 },
@@ -19,6 +20,9 @@ export const userSlice = createSlice({
     reducers: {
         updateUserAvatar(state, action: PayloadAction<any>){
             state.photo = action.payload;
+        },
+        updateUserPassword(state, action:PayloadAction<string>){
+            state.password = action.payload;
         }
     },
 });

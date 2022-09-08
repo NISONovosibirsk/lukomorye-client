@@ -12,6 +12,7 @@ export { default as DropDown } from './User/DropDown/DropDown';
 export { default as ProfileFormWrapper } from './Profile/ProfileFormWrapper/ProfileFormWrapper';
 export { default as ProfileData } from './Profile/ProfileData/ProfileData';
 export { default as AccountData } from './Profile/AccountData/AccountData';
+export { default as ProfileAvatar } from './Profile/ProfileAvatar/ProfileAvatar';
 
 // COMMON //
 export { default as Button } from './common/Button/Button';

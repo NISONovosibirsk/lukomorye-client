@@ -10,7 +10,7 @@ const ProfileData: React.FC = () => {
         <ProfileFormWrapper width='500px' height='410px' btnWidth='50%'>
             <h3>Профиль</h3>
             <form className={styles.dataForm}>
-                <Input type='text' placeholder='Фамилия / Имя / Отчество' />
+                <Input type='text' placeholder='Фамилия / Имя / Отчество'/>
                 <Select placeholder='Должность' fontSize='1.2em' options={postList}/>
                 <Select placeholder='Учебное заведение' fontSize='1.2em'/>
                 <Select placeholder='Класс' fontSize='1.2em' options={classList}/>

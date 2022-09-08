@@ -3,6 +3,7 @@ export interface UserState {
     rating: number;
     type: string;
     photo: any;
+    password: string;
     passedTests: Array<{ name: string; points: number }>;
 }
 
