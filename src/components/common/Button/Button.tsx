@@ -7,6 +7,7 @@ interface Props {
     margin?: string;
     isDisabled?: boolean;
     onClick?: () => void;
+    onSubmit?: () => void;
     type?: string;
 }
 
@@ -18,6 +19,7 @@ const Button: React.FC<Props> = ({
     isDisabled,
     onClick,
     type,
+    onSubmit,
 }) => {
     const handleType = () => {
         switch (type) {
@@ -36,6 +38,7 @@ const Button: React.FC<Props> = ({
             style={{ width: width, margin: margin, height: height }}
             disabled={isDisabled}
             onClick={onClick}
+            onSubmit={onSubmit}
         >
             {title}
         </button>

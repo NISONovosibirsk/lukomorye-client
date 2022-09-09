@@ -1,5 +1,5 @@
 import styles from './TeacherData.module.scss';
-import { ProfileFormWrapper, Input, Select, StudentItem } from '../../';
+import { ProfileFormWrapper, StudentItem, Button } from '../../';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { AddIcon } from '../../../assets';
 import { userSlice } from '../../../store/reducers/userReducer';
@@ -15,18 +15,21 @@ const TeacherData: React.FC = () => {
     };
 
     return (
-        <ProfileFormWrapper width='1025px' height='370px' btnWidth='25%'>
+        <ProfileFormWrapper width='1040px' height='370px'>
             <div className={styles.header}>
-                <h3>Список участников тестирования</h3>
+                <h4>Список участников тестирования</h4>
                 <div className={styles.addStudent} onClick={handleAdd}>
                     Добавить участника
                     <AddIcon />
                 </div>
             </div>
-            <form className={styles.studentsForm}>
-                {studentsList.map((student, index) => (
-                    <StudentItem student={student} key={index} />
-                ))}
+            <form>
+                <div className={styles.studentsForm}>
+                    {studentsList.map((student, index) => (
+                        <StudentItem student={student} key={index} />
+                    ))}
+                </div>
+                <Button title='Сохранить' width='25%' type='submit' />
             </form>
         </ProfileFormWrapper>
     );

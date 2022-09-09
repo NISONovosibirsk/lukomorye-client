@@ -12,6 +12,7 @@
     display: flex;
     column-gap: 1vw;
     align-items: center;
+    user-select: none;
 
     svg {
         cursor: pointer;

@@ -35,7 +35,7 @@ export const userSlice = createSlice({
         addStudent(state, action: PayloadAction<Student>) {
             state.studentsList.push(action.payload);
         },
-        editName(state, action: PayloadAction<string>){
+        editUserName(state, action: PayloadAction<string>){
             state.name = action.payload
         },
         editPost(state, action: PayloadAction<string>){

@@ -37,3 +37,9 @@
     color: #43b05c;
     border: solid 1px #43b05c;
 }
+
+.submit {
+    button {
+        grid-area: Button;
+    }
+}

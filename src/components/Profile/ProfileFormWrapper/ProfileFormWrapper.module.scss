@@ -1,13 +1,13 @@
 .formWrapper {
     background: #f1f0f0;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     display: grid;
     row-gap: 1vh;
     grid-template-columns: 100%;
-    grid-template-rows: 10% auto 20%;
+    grid-template-rows: 10% auto;
     grid-template-areas:
         'Header'
-        'Form'
-        'Button';
+        'Form';
     border-radius: 8px;
     padding: {
         top: 1.5vh;
@@ -16,16 +16,11 @@
         left: 1.5vw;
     }
 
-    h3 {
+    h4 {
         font-weight: 700;
         grid-area: Header;
         justify-self: start;
         color: #545454;
-    }
-
-    button {
-        grid-area: Button;
-        place-self: center;
     }
 
     form {
@@ -33,7 +28,17 @@
         place-self: center;
         width: 100%;
         height: 100%;
+
         display: grid;
-        gap: 2vh;
+        grid-template-columns: 100%;
+        grid-template-rows: 80% 20%;
+        grid-template-areas:
+            'Inputs'
+            'Button';
+        
+        button {
+            grid-area: Button;
+            place-self: center;
+        }
     }
 }

@@ -5,17 +5,19 @@ interface Props {
     children: React.ReactNode;
     width: string;
     height: string;
-    btnWidth: string;
 }
 
-const ProfileFormWrapper: React.FC<Props> = ({ children, width, height, btnWidth }) => {
+const ProfileFormWrapper: React.FC<Props> = ({
+    children,
+    width,
+    height,
+}) => {
     return (
         <div
             className={styles.formWrapper}
             style={{ width: `${width}`, height: `${height}` }}
         >
             {children}
-            <Button title='Сохранить' width={btnWidth}/>
         </div>
     );
 };

@@ -1,9 +1,7 @@
 .studentsForm {
+    display: grid;
+    gap: 2vh;
     grid-template-rows: repeat(auto-fill, 5vh);
-
-    input {
-        font-size: 1.2em;
-    }
 }
 
 .header {

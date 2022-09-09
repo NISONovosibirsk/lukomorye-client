@@ -11,6 +11,7 @@ interface Props {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string | number;
     isScore?: boolean;
+    name?: string;
 }
 
 const Input: React.FC<Props> = ({
@@ -22,6 +23,7 @@ const Input: React.FC<Props> = ({
     placeholder,
     value,
     isScore,
+    name,
 }) => {
     const inputType = useRef<HTMLInputElement>(null);
 
@@ -45,6 +47,7 @@ const Input: React.FC<Props> = ({
                 className={`${styles.input} ${
                     type === 'password' && styles.password
                 } ${isScore && styles.score}`}
+                name={name}
                 type={type}
                 style={{
                     width: `${width}`,
