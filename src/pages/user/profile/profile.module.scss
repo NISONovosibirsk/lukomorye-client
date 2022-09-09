@@ -8,8 +8,11 @@
 }
 
 .header {
+    margin: {
+        left: 1vw;
+    };
     display: flex;
-    place-self: center;
+    place-self: start;
     column-gap: 1.5vw;
     align-items: center;
 }

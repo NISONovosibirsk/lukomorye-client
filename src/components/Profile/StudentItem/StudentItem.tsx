@@ -15,7 +15,7 @@ const StudentItem: React.FC<Props> = ({student}) => {
                 placeholder='Имя / Фамилия'
                 value={student.name}
             />
-            <Select placeholder='Класс' value={student.class} />
+            <Select placeholder='Класс' value={student.score} />
             <Input
                 type='text'
                 placeholder='Колличество баллов'

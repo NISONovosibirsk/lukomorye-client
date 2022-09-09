@@ -4,7 +4,7 @@ interface Props {
     placeholder: string;
     fontSize?: string;
     options?: Array<string>;
-    value?: string;
+    value?: string | number;
 }
 
 const Select: React.FC<Props> = ({ placeholder, fontSize, options, value }) => {
