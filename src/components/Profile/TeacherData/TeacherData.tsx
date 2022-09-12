@@ -24,12 +24,12 @@ const TeacherData: React.FC = () => {
                 </div>
             </div>
             <form>
-                <div className={styles.studentsForm}>
+                {/* <div className={styles.studentsForm}>
                     {studentsList.map((student, index) => (
                         <StudentItem student={student} key={index} />
                     ))}
                 </div>
-                <Button title='Сохранить' width='25%' type='submit' />
+                <Button title='Сохранить' width='25%' type='submit' /> */}
             </form>
         </ProfileFormWrapper>
     );

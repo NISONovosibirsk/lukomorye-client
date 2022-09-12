@@ -8,11 +8,12 @@ interface Props {
 }
 
 const UserLayout: React.FC<Props> = ({ children }) => {
+    const { dropDown } = useAppSelector(state => state.statusReducer);
     const { updateDropDown } = statusSlice.actions;
     const dispatch = useAppDispatch();
 
     const handleClose: () => void = () => {
-        dispatch(updateDropDown(false));
+        dropDown && dispatch(updateDropDown(false));
     };
 
     return (

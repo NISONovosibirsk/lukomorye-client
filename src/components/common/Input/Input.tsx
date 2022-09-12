@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useController, useFormContext } from 'react-hook-form';
 import { ShowIcon } from '../../../assets';
 import styles from './Input.module.scss';
 
@@ -11,7 +12,7 @@ interface Props {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value?: string | number;
     isScore?: boolean;
-    name?: string;
+    name: string;
 }
 
 const Input: React.FC<Props> = ({
@@ -43,20 +44,20 @@ const Input: React.FC<Props> = ({
     return (
         <div className={styles.inputWrapper}>
             <input
-                ref={inputType}
                 className={`${styles.input} ${
                     type === 'password' && styles.password
                 } ${isScore && styles.score}`}
-                name={name}
                 type={type}
                 style={{
                     width: `${width}`,
                     height: `${height}`,
                     fontSize: `${fontSize}`,
                 }}
-                placeholder={placeholder}
+                ref={inputType}
+                name={name}
                 onChange={onChange}
-                value={isScore ? `${value}/100` : value}
+                placeholder={placeholder}
+                defaultValue={isScore ? `${value}/100` : value}
             />
             {type === 'password' && (
                 <ShowIcon

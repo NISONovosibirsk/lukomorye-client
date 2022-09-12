@@ -10,7 +10,7 @@ const StudentItem: React.FC<Props> = ({student}) => {
 
     return (
         <div className={styles.student}>
-            <Input
+            {/* <Input
                 type='text'
                 placeholder='Имя / Фамилия'
                 value={student.name}
@@ -21,7 +21,7 @@ const StudentItem: React.FC<Props> = ({student}) => {
                 placeholder='Колличество баллов'
                 isScore={true}
                 value={student.score}
-            />
+            /> */}
         </div>
     );
 };

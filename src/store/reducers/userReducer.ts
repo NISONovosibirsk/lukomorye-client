@@ -35,18 +35,12 @@ export const userSlice = createSlice({
         addStudent(state, action: PayloadAction<Student>) {
             state.studentsList.push(action.payload);
         },
-        editUserName(state, action: PayloadAction<string>){
-            state.name = action.payload
+        updateProfile(state, action: PayloadAction<UserState>) {
+            state.name = action.payload.name;
+            state.post = action.payload.post;
+            state.school = action.payload.school;
+            state.grade = action.payload.grade;
         },
-        editPost(state, action: PayloadAction<string>){
-            state.post = action.payload
-        },
-        editSchool(state, action: PayloadAction<string>){
-            state.school = action.payload
-        },
-        editGrade(state, action: PayloadAction<string>){
-            state.grade = action.payload
-        }
     },
 });
 
