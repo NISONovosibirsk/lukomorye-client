@@ -1,4 +1,3 @@
-import Button from '../../common/Button/Button';
 import styles from './ProfileFormWrapper.module.scss';
 
 interface Props {
@@ -7,11 +6,7 @@ interface Props {
     height: string;
 }
 
-const ProfileFormWrapper: React.FC<Props> = ({
-    children,
-    width,
-    height,
-}) => {
+const ProfileFormWrapper: React.FC<Props> = ({ children, width, height }) => {
     return (
         <div
             className={styles.formWrapper}

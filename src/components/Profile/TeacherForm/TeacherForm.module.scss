@@ -1,0 +1,83 @@
+.teacherForm {
+    display: grid;
+    row-gap: 1vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto;
+    grid-template-areas:
+        'Header'
+        'Form';
+    height: 100%;
+
+    h4 {
+        font-weight: 700;
+        grid-area: Header;
+        justify-self: start;
+        color: #545454;
+    }
+
+    form {
+        grid-area: Form;
+        place-self: center;
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 80% 20%;
+        grid-template-areas:
+            'Inputs'
+            'Button';
+
+        button {
+            grid-area: Button;
+            place-self: center;
+        }
+    }
+}
+
+.formModal {
+    grid-template-rows: 5% auto;
+
+    form {
+        grid-template-rows: auto 8%;
+    }
+
+
+}
+
+.studentsForm {
+    display: grid;
+    gap: 3vh;
+    grid-template-rows: repeat(auto-fill, 4.5vh);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.caption {
+    color: #545454;
+    font-style: italic;
+}
+
+.addStudent {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #545454;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: black;
+        scale: 1.05;
+        transition: scale 0.2s ease;
+    }
+
+    &:active {
+        color: #545454;
+    }
+}

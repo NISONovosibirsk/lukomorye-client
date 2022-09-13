@@ -9,6 +9,7 @@ interface Props {
     defaultValue: string | number;
     isScore?: boolean;
     name: string;
+    type?: string;
 
     validations?: any;
 }
@@ -22,6 +23,7 @@ const FormInput: React.FC<Props> = ({
     placeholder,
     validations,
     defaultValue,
+    type,
 }) => {
     const {
         field,
@@ -31,8 +33,10 @@ const FormInput: React.FC<Props> = ({
     return (
         <div className={styles.inputWrapper}>
             <input
-                className={`${styles.input}  ${isScore && styles.score} ${error && styles.error}`}
-                type='text'
+                className={`${styles.input}  ${isScore && styles.score} ${
+                    error && styles.error
+                }`}
+                type={type}
                 style={{
                     width: `${width}`,
                     height: `${height}`,

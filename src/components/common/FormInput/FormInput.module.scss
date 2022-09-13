@@ -1,11 +1,11 @@
 .inputWrapper {
-    // display: flex;
-    // align-items: center;
-    // flex-direction: column;
-
     span {
         color: red;
         font-style: italic;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
     }
 }
 
@@ -29,6 +29,14 @@
 
     &::placeholder {
         color: #545454;
+    }
+
+    &::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+    &::-webkit-outer-spin-button {
+        appearance: none;
     }
 }
 

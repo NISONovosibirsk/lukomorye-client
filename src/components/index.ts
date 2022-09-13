@@ -15,6 +15,7 @@ export { default as AccountData } from './Profile/AccountData/AccountData';
 export { default as TeacherData } from './Profile/TeacherData/TeacherData';
 export { default as StudentItem } from './Profile/StudentItem/StudentItem';
 export { default as ProfileAvatar } from './Profile/ProfileAvatar/ProfileAvatar';
+export { default as TeacherForm } from './Profile/TeacherForm/TeacherForm';
 
 // COMMON //
 export { default as Button } from './common/Button/Button';
@@ -22,3 +23,4 @@ export { default as Input } from './common/Input/Input';
 export { default as Select } from './common/Select/Select';
 export { default as FormInput } from './common/FormInput/FormInput';
 export { default as PasswordInput } from './common/PasswordInput/PasswordInput';
+export { default as Modal } from './common/Modal/Modal';

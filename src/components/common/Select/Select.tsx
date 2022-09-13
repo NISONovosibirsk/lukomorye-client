@@ -2,7 +2,7 @@ import { useController } from 'react-hook-form';
 import styles from './Select.module.scss';
 
 interface Props {
-    placeholder: string;
+    placeholder?: string;
     fontSize?: string;
     options: Array<string>;
     defaultValue?: string | number;
