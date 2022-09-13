@@ -1,5 +1,5 @@
 import { useController } from 'react-hook-form';
-import styles from './ValidatedInput.module.scss';
+import styles from './FormInput.module.scss';
 
 interface Props {
     width?: string;
@@ -13,7 +13,7 @@ interface Props {
     validations?: any;
 }
 
-const ValidatingInput: React.FC<Props> = ({
+const FormInput: React.FC<Props> = ({
     name,
     isScore,
     width,
@@ -46,4 +46,4 @@ const ValidatingInput: React.FC<Props> = ({
     );
 };
 
-export default ValidatingInput;
+export default FormInput;

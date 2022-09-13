@@ -1,4 +1,4 @@
-import { Select, Button, ValidatedInput } from '../..';
+import { Select, Button, FormInput } from '../..';
 import { gradeList, postList } from '../../../assets/mock';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { userSlice } from '../../../store/reducers/userReducer';
@@ -7,17 +7,15 @@ import styles from './ProfileData.module.scss';
 import { FormProvider, useForm } from 'react-hook-form';
 
 const ProfileData: React.FC = () => {
-    const { name, post, grade, school } = useAppSelector(
-        state => state.userReducer
-    );
+    const { post, grade, school } = useAppSelector(state => state.userReducer);
     const { updateProfile } = userSlice.actions;
     const dispatch = useAppDispatch();
 
-    const methods = useForm({ mode: 'onChange' });
+    const methods = useForm({ mode: 'all' });
 
     const onSubmit = (data: any) => {
-        console.log(data);
         dispatch(updateProfile(data));
+        methods.reset();
     };
 
     const validations = {
@@ -36,7 +34,7 @@ const ProfileData: React.FC = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <div className={styles.dataForm}>
-                        <ValidatedInput
+                        <FormInput
                             name={'name'}
                             placeholder={'Фамилия / Имя / Отчество'}
                             validations={validations.name}

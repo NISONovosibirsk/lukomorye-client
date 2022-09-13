@@ -2,7 +2,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import {
     ProfileFormWrapper,
     Button,
-    ValidatedInput,
+    FormInput,
     PasswordInput,
 } from '../../';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
@@ -10,18 +10,14 @@ import { userSlice } from '../../../store/reducers/userReducer';
 import styles from './AccountData.module.scss';
 
 const AccountData: React.FC = () => {
-    const { password } = useAppSelector(state => state.userReducer);
-    const { updateUserPassword } = userSlice.actions;
+    const { updateAccountData } = userSlice.actions;
     const dispatch = useAppDispatch();
 
-    const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(updateUserPassword(e.target.value));
-    };
-
-    const methods = useForm();
+    const methods = useForm({ mode: 'all' });
 
     const onSubmit = (data: any) => {
-        console.log(data);
+        dispatch(updateAccountData(data));
+        methods.reset();
     };
 
     const validations = {
@@ -36,8 +32,17 @@ const AccountData: React.FC = () => {
             required: 'Заполните это поле',
             minLength: {
                 value: 8,
-                message: 'Минимальная длинна: 8 символов'
-            }
+                message: 'Минимальная длина: 8 символов',
+            },
+        },
+        confirmPassword: {
+            required: 'Заполните это поле',
+            minLength: {
+                value: 8,
+                message: 'Минимальная длина: 8 символов',
+            },
+            validate: (value: string) =>
+                value === methods.watch('password') || 'Пароли не совпадают',
         },
     };
 
@@ -47,7 +52,7 @@ const AccountData: React.FC = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <div className={styles.accountForm}>
-                        <ValidatedInput
+                        <FormInput
                             name={'email'}
                             placeholder={'Электронная почта'}
                             defaultValue={''}
@@ -56,16 +61,22 @@ const AccountData: React.FC = () => {
                         <PasswordInput
                             name='password'
                             defaultValue={''}
-                            placeholder={'Пароль'}
+                            placeholder={'Введите новый пароль'}
                             validations={validations.password}
                         />
                         <PasswordInput
                             name='confirmPassword'
                             defaultValue={''}
-                            placeholder={'Введите новый пароль'}
+                            placeholder={'Подтвердите пароль'}
+                            validations={validations.confirmPassword}
                         />
                     </div>
-                    <Button title='Сохранить' width='50%' type='submit' />
+                    <Button
+                        title='Сохранить'
+                        width='50%'
+                        type='submit'
+                        isDisabled={!methods.formState.isValid}
+                    />
                 </form>
             </FormProvider>
         </ProfileFormWrapper>

@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Student } from '../../types/profileTypes';
-import { UserState } from '../../types/reduxTypes';
+import { UserAccount, UserState } from '../../types/reduxTypes';
 
 const initialState: UserState = {
     name: 'Роман Карлович',
     post: 'Учитель',
     grade: '1Б',
+    email: 'roman@yandex.ru',
     rating: 70,
     school: 'Гимназия № 1',
     type: 'teacher',
@@ -41,6 +42,10 @@ export const userSlice = createSlice({
             state.school = action.payload.school;
             state.grade = action.payload.grade;
         },
+        updateAccountData(state, action: PayloadAction<UserAccount>) {
+            state.email = action.payload.email;
+            state.password = action.payload.confirmPassword;
+        }
     },
 });
 

@@ -20,5 +20,5 @@ export { default as ProfileAvatar } from './Profile/ProfileAvatar/ProfileAvatar'
 export { default as Button } from './common/Button/Button';
 export { default as Input } from './common/Input/Input';
 export { default as Select } from './common/Select/Select';
-export { default as ValidatedInput } from './common/ValidatedInput/ValidatedInput';
+export { default as FormInput } from './common/FormInput/FormInput';
 export { default as PasswordInput } from './common/PasswordInput/PasswordInput';
