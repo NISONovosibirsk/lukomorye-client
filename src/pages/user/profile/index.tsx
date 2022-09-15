@@ -4,9 +4,9 @@ import {
     Modal,
     ProfileAvatar,
     ProfileData,
-    TeacherData,
     TeacherForm,
     UserLayout,
+    TeacherData,
 } from '../../../components';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';

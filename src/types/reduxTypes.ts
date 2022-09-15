@@ -23,5 +23,4 @@ export interface UserAccount {
 export interface StatusState {
     dropDown: boolean;
     modal: boolean;
-    studentsCaption: boolean;
 }

@@ -4,7 +4,6 @@ import { StatusState } from '../../types/reduxTypes';
 const initialState: StatusState = {
     dropDown: false,
     modal: false,
-    studentsCaption: false,
 };
 
 export const statusSlice = createSlice({
@@ -16,9 +15,6 @@ export const statusSlice = createSlice({
         },
         updateModal(state, action: PayloadAction<boolean>) {
             state.modal = action.payload;
-        },
-        updateCaption(state, action: PayloadAction<boolean>) {
-            state.studentsCaption = action.payload;
         },
     },
 });

@@ -8,6 +8,7 @@ interface Props {
     defaultValue?: string | number;
     name: string;
     validations?: any;
+    isDisabled?: boolean;
 }
 
 const Select: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const Select: React.FC<Props> = ({
     defaultValue,
     name,
     validations,
+    isDisabled,
 }) => {
     const {
         field,
@@ -25,12 +27,17 @@ const Select: React.FC<Props> = ({
 
     return (
         <select
+            disabled={isDisabled}
             className={styles.select}
             placeholder={placeholder}
             style={{ fontSize: `${fontSize}` }}
             {...field}
         >
-            <option className={styles.placeholder} disabled defaultValue={defaultValue}>
+            <option
+                className={styles.placeholder}
+                disabled
+                defaultValue={defaultValue}
+            >
                 {defaultValue ? defaultValue : placeholder}
             </option>
             {options &&

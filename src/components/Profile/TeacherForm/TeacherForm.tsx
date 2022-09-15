@@ -4,23 +4,13 @@ import { userSlice } from '../../../store/reducers/userReducer';
 import { StudentItem, Button } from '../../';
 import styles from './TeacherForm.module.scss';
 import { FormProvider, useForm } from 'react-hook-form';
-import { statusSlice } from '../../../store/reducers/statusReducer';
 
 const TeacherForm: React.FC = () => {
     const { studentsList } = useAppSelector(state => state.userReducer);
-    const { updateModal } = statusSlice.actions;
-    const { modal, studentsCaption } = useAppSelector(
-        state => state.statusReducer
-    );
     const { addStudent } = userSlice.actions;
     const dispatch = useAppDispatch();
 
     const methods = useForm({ mode: 'all' });
-
-    const handleOpen = (e: any) => {
-        e.preventDefault();
-        dispatch(updateModal(true));
-    };
 
     const handleAdd = (e: any) => {
         e.stopPropagation();
@@ -32,12 +22,9 @@ const TeacherForm: React.FC = () => {
     };
 
     return (
-        <div className={`${styles.teacherForm} ${modal && styles.formModal}`}>
-            <div className={styles.header} onClick={handleOpen}>
+        <div className={styles.teacherForm}>
+            <div className={styles.header}>
                 <h4>Список участников тестирования</h4>
-                {studentsCaption && (
-                    <span className={styles.caption}>Развернуть</span>
-                )}
                 <div className={styles.addStudent} onClick={handleAdd}>
                     Добавить участника
                     <AddIcon />

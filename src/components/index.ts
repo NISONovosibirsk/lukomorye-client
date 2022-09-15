@@ -12,10 +12,10 @@ export { default as DropDown } from './User/DropDown/DropDown';
 export { default as ProfileFormWrapper } from './Profile/ProfileFormWrapper/ProfileFormWrapper';
 export { default as ProfileData } from './Profile/ProfileData/ProfileData';
 export { default as AccountData } from './Profile/AccountData/AccountData';
-export { default as TeacherData } from './Profile/TeacherData/TeacherData';
 export { default as StudentItem } from './Profile/StudentItem/StudentItem';
 export { default as ProfileAvatar } from './Profile/ProfileAvatar/ProfileAvatar';
 export { default as TeacherForm } from './Profile/TeacherForm/TeacherForm';
+export { default as TeacherData } from './Profile/TeacherData/TeacherData';
 
 // COMMON //
 export { default as Button } from './common/Button/Button';

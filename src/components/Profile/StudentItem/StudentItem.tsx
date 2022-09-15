@@ -1,4 +1,3 @@
-import { useFormContext } from 'react-hook-form';
 import { FormInput, Select } from '../..';
 import { gradeList } from '../../../assets/mock';
 import { Student } from '../../../types/profileTypes';
@@ -6,14 +5,13 @@ import styles from './StudentItem.module.scss';
 
 interface Props {
     student: Student;
+    isDisabled?: boolean;
 }
 
-const StudentItem: React.FC<Props> = ({ student }) => {
+const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
     const handleClick = (e: any) => {
         e.stopPropagation();
     };
-
-    const methods = useFormContext();
 
     const validations = {
         name: {
@@ -28,19 +26,20 @@ const StudentItem: React.FC<Props> = ({ student }) => {
         },
         score: {
             required: 'Заполните это поле',
-            validate: (value: number) =>
-                value <= 100 || 'Больше 100 баллов'
+            validate: (value: number) => value <= 100 || 'Больше 100 баллов',
         },
     };
 
     return (
         <div className={styles.student} onClick={handleClick}>
             <FormInput
+                isDisabled={isDisabled}
                 defaultValue={student.name}
                 name={student.name}
                 validations={validations.name}
             />
             <Select
+                isDisabled={isDisabled}
                 name={student.grade}
                 placeholder={'Класс'}
                 defaultValue={student.grade}
@@ -48,6 +47,7 @@ const StudentItem: React.FC<Props> = ({ student }) => {
                 validations={validations.grade}
             />
             <FormInput
+                isDisabled={isDisabled}
                 defaultValue={student.score}
                 name={String(student.score)}
                 placeholder={'Колличество баллов'}

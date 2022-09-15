@@ -10,8 +10,8 @@ interface Props {
     isScore?: boolean;
     name: string;
     type?: string;
-
     validations?: any;
+    isDisabled?: boolean;
 }
 
 const FormInput: React.FC<Props> = ({
@@ -24,6 +24,7 @@ const FormInput: React.FC<Props> = ({
     validations,
     defaultValue,
     type,
+    isDisabled
 }) => {
     const {
         field,
@@ -33,6 +34,7 @@ const FormInput: React.FC<Props> = ({
     return (
         <div className={styles.inputWrapper}>
             <input
+                disabled={isDisabled}
                 className={`${styles.input}  ${isScore && styles.score} ${
                     error && styles.error
                 }`}
