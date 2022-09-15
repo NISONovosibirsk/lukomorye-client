@@ -35,12 +35,12 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
             <FormInput
                 isDisabled={isDisabled}
                 defaultValue={student.name}
-                name={student.name}
+                name={'name'}
                 validations={validations.name}
             />
             <Select
                 isDisabled={isDisabled}
-                name={student.grade}
+                name={'grade'}
                 placeholder={'Класс'}
                 defaultValue={student.grade}
                 options={gradeList}
@@ -49,7 +49,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
             <FormInput
                 isDisabled={isDisabled}
                 defaultValue={student.score}
-                name={String(student.score)}
+                name={'score'}
                 placeholder={'Колличество баллов'}
                 isScore={true}
                 validations={validations.score}

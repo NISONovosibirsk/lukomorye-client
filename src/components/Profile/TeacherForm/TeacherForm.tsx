@@ -12,8 +12,7 @@ const TeacherForm: React.FC = () => {
 
     const methods = useForm({ mode: 'all' });
 
-    const handleAdd = (e: any) => {
-        e.stopPropagation();
+    const handleAdd = () => {
         dispatch(addStudent({ name: '', grade: '', score: 0 }));
     };
 
