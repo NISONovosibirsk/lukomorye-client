@@ -1,7 +1,12 @@
 .inputWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
+    span {
+        color: red;
+        font-style: italic;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
 }
 
 .input {
@@ -25,10 +30,21 @@
     &::placeholder {
         color: #545454;
     }
+
+    &::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+    &::-webkit-outer-spin-button {
+        appearance: none;
+    }
 }
 
-.password {
-    background: white;
+.error {
+    border: solid red 1px;
+    &:focus {
+        border: 1px solid red;
+    }
 }
 
 .score {

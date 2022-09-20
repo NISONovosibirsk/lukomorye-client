@@ -17,10 +17,14 @@ export { default as ProfileAvatar } from './Profile/ProfileAvatar/ProfileAvatar'
 export { default as TeacherForm } from './Profile/TeacherForm/TeacherForm';
 export { default as TeacherData } from './Profile/TeacherData/TeacherData';
 
+//QUIZ
+export { default as QuizLayout } from './Quiz/QuizLayout/QuizLayout';
+
 // COMMON //
 export { default as Button } from './common/Button/Button';
 export { default as Input } from './common/Input/Input';
 export { default as Select } from './common/Select/Select';
+export { default as FormSelect } from './common/FormSelect/FormSelect';
 export { default as FormInput } from './common/FormInput/FormInput';
 export { default as PasswordInput } from './common/PasswordInput/PasswordInput';
 export { default as Modal } from './common/Modal/Modal';

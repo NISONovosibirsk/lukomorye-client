@@ -1,4 +1,4 @@
-import { FormInput, Select } from '../..';
+import { FormInput, FormSelect } from '../..';
 import { gradeList } from '../../../assets/mock';
 import { Student } from '../../../types/profileTypes';
 import styles from './StudentItem.module.scss';
@@ -38,7 +38,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
                 name={'name'}
                 validations={validations.name}
             />
-            <Select
+            <FormSelect
                 isDisabled={isDisabled}
                 name={'grade'}
                 placeholder={'Класс'}
@@ -55,6 +55,9 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
                 validations={validations.score}
                 type={'number'}
             />
+            {/* <Input />
+            <Select />
+            <Input /> */}
         </div>
     );
 };

@@ -1,0 +1,10 @@
+.quiz {
+    height: 108vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 8vh auto 8vh;
+    grid-template-areas: 
+        'Header'
+        'Body'
+        'Footer';
+}

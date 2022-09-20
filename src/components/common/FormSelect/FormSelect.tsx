@@ -1,26 +1,37 @@
-import styles from './Select.module.scss';
+import { useController } from 'react-hook-form';
+import styles from './FormSelect.module.scss';
 
 interface Props {
     placeholder?: string;
     fontSize?: string;
     options: Array<string>;
     defaultValue?: string | number;
+    name: string;
+    validations?: any;
     isDisabled?: boolean;
 }
 
-const Select: React.FC<Props> = ({
+const FormSelect: React.FC<Props> = ({
     placeholder,
     fontSize,
     options,
     defaultValue,
+    name,
+    validations,
     isDisabled,
 }) => {
+    const {
+        field,
+        fieldState: { error },
+    } = useController({ name, rules: validations, defaultValue });
+
     return (
         <select
             disabled={isDisabled}
             className={styles.select}
             placeholder={placeholder}
             style={{ fontSize: `${fontSize}` }}
+            {...field}
         >
             <option
                 className={styles.placeholder}
@@ -43,4 +54,4 @@ const Select: React.FC<Props> = ({
     );
 };
 
-export default Select;
+export default FormSelect;

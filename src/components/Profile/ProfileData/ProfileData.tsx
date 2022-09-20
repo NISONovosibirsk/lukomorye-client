@@ -1,4 +1,4 @@
-import { Select, Button, FormInput } from '../..';
+import { FormSelect, Button, FormInput } from '../..';
 import { gradeList, postList } from '../../../assets/mock';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { userSlice } from '../../../store/reducers/userReducer';
@@ -40,21 +40,21 @@ const ProfileData: React.FC = () => {
                             validations={validations.name}
                             defaultValue={''}
                         />
-                        <Select
+                        <FormSelect
                             name={'post'}
                             placeholder={'Должность'}
                             defaultValue={post}
                             validations={validations.select}
                             options={postList}
                         />
-                        <Select
+                        <FormSelect
                             name={'school'}
                             placeholder={'Учебное заведение'}
                             defaultValue={school}
                             validations={validations.select}
                             options={[]}
                         />
-                        <Select
+                        <FormSelect
                             name={'grade'}
                             placeholder={'Класс'}
                             defaultValue={grade}

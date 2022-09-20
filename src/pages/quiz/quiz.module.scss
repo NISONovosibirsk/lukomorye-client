@@ -1,0 +1,29 @@
+.quiz {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% auto;
+
+    h2 {
+        color: #545454;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+    background: #F2F2F2;
+    border-radius: 5px;
+    padding: {
+        top: 2.5vh;
+        bottom: 2.5vh;
+        left: 2vw;
+        right: 2vw;
+    };
+}
+
+.info {
+    width: 45vw;
+}
