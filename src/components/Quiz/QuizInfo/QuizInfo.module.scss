@@ -1,0 +1,20 @@
+.quiz {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100%;
+    width: 40vw;
+    row-gap: 2vh;
+    
+    h2 {
+        color: #545454;
+        place-self: start;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+    border-radius: 5px;
+}

@@ -19,7 +19,7 @@ const Modal: React.FC<Props> = ({ children, onClose, height, width }) => {
             <div
                 className={styles.modalContent}
                 onMouseDown={e => e.stopPropagation()}
-                style={{ height: `${height}`, width: `${width}` }}
+                // style={{ height: `${height}`, width: `${width}` }}
             >
                 {children}
             </div>

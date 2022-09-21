@@ -1,4 +1,6 @@
 import { ColorsIcon } from '../../../assets';
+import { useAppDispatch } from '../../../hooks/redux';
+import { statusSlice } from '../../../store/reducers/statusReducer';
 import Button from '../../common/Button/Button';
 import styles from './QuizCard.module.scss';
 
@@ -7,6 +9,9 @@ interface Props {
 }
 
 const QuizCard: React.FC<Props> = ({ quiz }) => {
+    const dispatch = useAppDispatch();
+    const { updateModal } = statusSlice.actions;
+
     const colors: Array<string> = [
         '#43B05C',
         '#0D85C9',
@@ -26,6 +31,10 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
         return colors[randomValue];
     };
 
+    const handleStart = () => {
+        dispatch(updateModal(true));
+    };
+
     return (
         <li className={styles.card}>
             <div className={styles.header}>
@@ -33,7 +42,7 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
                 <ColorsIcon />
             </div>
             <p>{quiz.description}</p>
-            <Button title='Старт' width={'250px'} />
+            <Button title='Старт' width={'250px'} onClick={handleStart} />
         </li>
     );
 };

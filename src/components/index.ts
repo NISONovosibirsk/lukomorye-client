@@ -19,6 +19,7 @@ export { default as TeacherData } from './Profile/TeacherData/TeacherData';
 
 //QUIZ
 export { default as QuizLayout } from './Quiz/QuizLayout/QuizLayout';
+export { default as QuizInfo } from './Quiz/QuizInfo/QuizInfo';
 
 // COMMON //
 export { default as Button } from './common/Button/Button';
