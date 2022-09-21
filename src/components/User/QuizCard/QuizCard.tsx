@@ -5,7 +5,7 @@ import Button from '../../common/Button/Button';
 import styles from './QuizCard.module.scss';
 
 interface Props {
-    quiz: { name: string; description: string };
+    quiz: { name: string; theme: string };
 }
 
 const QuizCard: React.FC<Props> = ({ quiz }) => {
@@ -41,7 +41,7 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
                 <p style={{ color: `${handleColors()}` }}>{quiz.name}</p>
                 <ColorsIcon />
             </div>
-            <p>{quiz.description}</p>
+            <p>{quiz.theme}</p>
             <Button title='Старт' width={'250px'} onClick={handleStart} />
         </li>
     );

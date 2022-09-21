@@ -1,20 +1,30 @@
 import { ReactElement, useEffect } from 'react';
 import type { NextPageWithLayout } from '../_app';
 import { QuizCard, UserLayout, Modal, QuizInfo } from '../../components';
-import { QUIZ_LIST } from '../../assets/mock';
 import styles from './index.module.scss';
-import { useAppDispatch } from '../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { statusSlice } from '../../store/reducers/statusReducer';
 import axios from 'axios';
+import { quizSlice } from '../../store/reducers/quizReducer';
 
 const User: NextPageWithLayout = () => {
     const { updateModal } = statusSlice.actions;
+    const { updateQuizList } = quizSlice.actions;
+    const { quizList } = useAppSelector(state => state.quizReducer);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        axios.get('quizMock.json').then(response => {
-            console.log(response);
-        });
+        const getData = async () => {
+            try {
+                await axios.get('quizMock.json').then(response => {
+                    console.log(response);
+                    dispatch(updateQuizList(response.data.quizes));
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getData();
     }, []);
 
     const handleClose = () => {
@@ -25,7 +35,7 @@ const User: NextPageWithLayout = () => {
         <div className={styles.home}>
             <h2>Рекомендуемые викторины</h2>
             <ul>
-                {QUIZ_LIST.map((quiz, index) => (
+                {quizList.map((quiz, index) => (
                     <QuizCard key={index} quiz={quiz} />
                 ))}
             </ul>

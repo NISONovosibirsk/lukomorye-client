@@ -1,4 +1,5 @@
 import { Student } from './profileTypes';
+import { Quiz } from './quizTypes';
 
 export interface UserState {
     name: string;
@@ -23,4 +24,8 @@ export interface UserAccount {
 export interface StatusState {
     dropDown: boolean;
     modal: boolean;
+}
+
+export interface QuizState {
+    quizList: Array<Quiz>;
 }
