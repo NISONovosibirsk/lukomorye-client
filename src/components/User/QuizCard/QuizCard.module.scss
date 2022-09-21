@@ -2,18 +2,26 @@
     height: 350px;
     width: 350px;
     display: grid;
-    row-gap: 2vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% auto 20%;
+    row-gap: 1vh;
     place-items: center;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     padding: 1vw {
         bottom: 2vh;
-    };
+    }
     transition: transform 0.5s ease;
 
     &:hover {
         transform: scale(1.05);
     }
+}
+
+.theme {
+    width: calc(350px - 2vw);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header {

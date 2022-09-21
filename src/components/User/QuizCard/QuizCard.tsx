@@ -41,7 +41,7 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
                 <p style={{ color: `${handleColors()}` }}>{quiz.name}</p>
                 <ColorsIcon />
             </div>
-            <p>{quiz.theme}</p>
+            <p className={styles.theme}>{quiz.theme}</p>
             <Button title='Старт' width={'250px'} onClick={handleStart} />
         </li>
     );
