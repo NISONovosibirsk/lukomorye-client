@@ -5,6 +5,12 @@ import { QuizState } from '../../types/reduxTypes';
 const initialState: QuizState = {
     quizList: [],
     quizTheme: '',
+    quiz: {
+        name: '',
+        terms: '',
+        theme: '',
+        questions: [],
+    },
 };
 
 export const quizSlice = createSlice({
@@ -16,6 +22,9 @@ export const quizSlice = createSlice({
         },
         updateQuizTheme(state, action: PayloadAction<string>) {
             state.quizTheme = action.payload;
+        },
+        updateQuiz(state, action: PayloadAction<Quiz>) {
+            state.quiz = action.payload;
         },
     },
 });

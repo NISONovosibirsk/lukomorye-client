@@ -17,7 +17,6 @@ const User: NextPageWithLayout = () => {
         const getData = async () => {
             try {
                 await axios.get('quizMock.json').then(response => {
-                    console.log(response);
                     dispatch(updateQuizList(response.data.quizes));
                 });
             } catch (error) {
