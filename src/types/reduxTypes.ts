@@ -28,4 +28,5 @@ export interface StatusState {
 
 export interface QuizState {
     quizList: Array<Quiz>;
+    quizTheme: string;
 }

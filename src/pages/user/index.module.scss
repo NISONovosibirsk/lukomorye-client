@@ -2,11 +2,6 @@
     display: grid;
     row-gap: 2.5vh;
 
-    h2 {
-        place-self: center;
-        color: #545454;
-    }
-
     ul {
         overflow-y: auto;
         height: 82vh;
@@ -16,6 +11,11 @@
         padding: {
             left: 1vw;
             top: 1.5vh;
-        } ;
+        }
     }
+}
+
+.header {
+    place-self: center;
+    color: #545454;
 }

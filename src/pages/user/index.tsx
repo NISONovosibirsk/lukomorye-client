@@ -33,7 +33,7 @@ const User: NextPageWithLayout = () => {
 
     return (
         <div className={styles.home}>
-            <h2>Рекомендуемые викторины</h2>
+            <h2 className={styles.header}>Рекомендуемые викторины</h2>
             <ul>
                 {quizList.map((quiz, index) => (
                     <QuizCard key={index} quiz={quiz} />

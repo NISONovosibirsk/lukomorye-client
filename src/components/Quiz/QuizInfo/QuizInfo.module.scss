@@ -2,19 +2,17 @@
     display: grid;
     place-items: center;
     grid-template-columns: 100%;
-    width: 40vw;
+    width: 35vw;
+    min-height: 30vh;
     row-gap: 2vh;
-    
-    h2 {
-        color: #545454;
-        place-self: start;
+    place-items: center;
+
+    button {
+        align-self: end;
     }
 }
 
-.info {
-    display: flex;
-    flex-direction: column;
-    gap: 3vh;
-    align-items: center;
-    border-radius: 5px;
+.header {
+    color: #545454;
+    align-self: start;
 }
