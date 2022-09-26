@@ -46,10 +46,16 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
                 <ColorsIcon />
             </div>
             <p className={styles.theme}>{quiz.theme}</p>
-            <Button title='Старт' width={'250px'} onClick={handleStart} />
+            {/* <Button title='Старт' width={'250px'} onClick={handleStart} /> */}
             {/* <Link href={`/quiz/${quiz.id}`}>
                 <a>Start</a>
             </Link> */}
+            <Link href={{
+              pathname: '/quiz/[slug]',
+              query: {slug: quiz.id}
+            }}>
+              Старт
+            </Link>
         </li>
     );
 };
