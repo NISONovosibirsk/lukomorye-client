@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ColorsIcon } from '../../../assets';
 import { useAppDispatch } from '../../../hooks/redux';
 import { quizSlice } from '../../../store/reducers/quizReducer';
@@ -6,7 +7,7 @@ import Button from '../../common/Button/Button';
 import styles from './QuizCard.module.scss';
 
 interface Props {
-    quiz: { name: string; theme: string };
+    quiz: { name: string; theme: string, id: number };
 }
 
 const QuizCard: React.FC<Props> = ({ quiz }) => {
@@ -46,6 +47,9 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
             </div>
             <p className={styles.theme}>{quiz.theme}</p>
             <Button title='Старт' width={'250px'} onClick={handleStart} />
+            {/* <Link href={`/quiz/${quiz.id}`}>
+                <a>Start</a>
+            </Link> */}
         </li>
     );
 };
