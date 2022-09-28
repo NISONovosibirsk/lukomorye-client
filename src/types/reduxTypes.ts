@@ -12,7 +12,10 @@ export interface UserState {
     photo: any;
     password: string;
     passedTests: Array<{ name: string; points: number }>;
-    studentsList: Array<Student>;
+}
+
+export interface StudentState {
+    studentList: Array<Student>;
 }
 
 export interface UserAccount {

@@ -1,5 +1,7 @@
-import { FormInput, FormSelect } from '../..';
+import { FormInput, FormSelect, Select, Input } from '../..';
+import { RemoveStudentIcon } from '../../../assets';
 import { gradeList } from '../../../assets/mock';
+import { useAppSelector } from '../../../hooks/redux';
 import { Student } from '../../../types/profileTypes';
 import styles from './StudentItem.module.scss';
 
@@ -9,9 +11,12 @@ interface Props {
 }
 
 const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
-    const handleClick = (e: any) => {
-        e.stopPropagation();
-    };
+    const { modal } = useAppSelector(state => state.statusReducer);
+    
+
+    const handleEdit = () => {
+
+    }
 
     const validations = {
         name: {
@@ -31,33 +36,15 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled }) => {
     };
 
     return (
-        <div className={styles.student} onClick={handleClick}>
-            <FormInput
-                isDisabled={isDisabled}
-                defaultValue={student.name}
-                name={'name'}
-                validations={validations.name}
-            />
-            <FormSelect
-                isDisabled={isDisabled}
-                name={'grade'}
-                placeholder={'Класс'}
-                defaultValue={student.grade}
+        <div className={styles.student}>
+            <Input value={student.name} isDisabled={isDisabled} />
+            <Select
+                value={student.grade}
                 options={gradeList}
-                validations={validations.grade}
-            />
-            <FormInput
                 isDisabled={isDisabled}
-                defaultValue={student.score}
-                name={'score'}
-                placeholder={'Колличество баллов'}
-                isScore={true}
-                validations={validations.score}
-                type={'number'}
             />
-            {/* <Input />
-            <Select />
-            <Input /> */}
+            <Input value={student.score} isDisabled={isDisabled} />
+            {modal && <RemoveStudentIcon className={styles.remove} />}
         </div>
     );
 };

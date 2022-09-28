@@ -5,7 +5,6 @@ interface Props {
     fontSize?: string;
     options: Array<string>;
     value: string | number;
-    name: string;
     validations?: any;
     isDisabled?: boolean;
 }
@@ -15,7 +14,6 @@ const Select: React.FC<Props> = ({
     fontSize,
     options,
     value,
-    name,
     validations,
     isDisabled,
 }) => {
@@ -26,6 +24,7 @@ const Select: React.FC<Props> = ({
             className={styles.select}
             placeholder={placeholder}
             style={{ fontSize: `${fontSize}` }}
+            value={value}
 
         >
             <option

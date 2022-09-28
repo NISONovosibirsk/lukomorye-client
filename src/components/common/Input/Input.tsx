@@ -9,7 +9,7 @@ interface Props {
     isScore?: boolean;
     type?: string;
     isDisabled?: boolean;
-    error: string;
+    error?: string;
 }
 
 const Input: React.FC<Props> = ({

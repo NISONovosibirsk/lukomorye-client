@@ -1,13 +1,13 @@
 import { AddIcon } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { userSlice } from '../../../store/reducers/userReducer';
 import { StudentItem, Button } from '../../';
 import styles from './TeacherForm.module.scss';
 import { FormProvider, useForm } from 'react-hook-form';
+import { studentSlice } from '../../../store/reducers/studentReducer';
 
 const TeacherForm: React.FC = () => {
-    const { studentsList } = useAppSelector(state => state.userReducer);
-    const { addStudent } = userSlice.actions;
+    const {studentList} =useAppSelector(state => state.studentReducer)
+    const { addStudent } = studentSlice.actions
     const dispatch = useAppDispatch();
 
     const methods = useForm({ mode: 'all' });
@@ -32,7 +32,7 @@ const TeacherForm: React.FC = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <div className={styles.studentsForm}>
-                        {studentsList.map((student, index) => (
+                        {studentList.map((student, index) => (
                             <StudentItem student={student} key={index} />
                         ))}
                     </div>
