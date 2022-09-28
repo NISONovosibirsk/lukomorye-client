@@ -6,8 +6,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { studentSlice } from '../../../store/reducers/studentReducer';
 
 const TeacherForm: React.FC = () => {
-    const {studentList} =useAppSelector(state => state.studentReducer)
-    const { addStudent } = studentSlice.actions
+    const { studentList } = useAppSelector(state => state.studentReducer);
+    const { addStudent } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
     const methods = useForm({ mode: 'all' });
@@ -33,7 +33,7 @@ const TeacherForm: React.FC = () => {
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <div className={styles.studentsForm}>
                         {studentList.map((student, index) => (
-                            <StudentItem student={student} key={index} />
+                            <StudentItem student={student} key={index} index={index}/>
                         ))}
                     </div>
                     <Button

@@ -16,6 +16,9 @@ export const studentSlice = createSlice({
         addStudent(state, action: PayloadAction<Student>) {
             state.studentList.push(action.payload);
         },
+        removeStudent(state, action: PayloadAction<number>) {
+            state.studentList.splice(action.payload, 1);
+        },
         updateStudentList(state, action: PayloadAction<[Student]>) {
             state.studentList = action.payload;
         },
