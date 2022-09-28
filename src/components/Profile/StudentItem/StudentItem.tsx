@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { FormInput, FormSelect, Select, Input } from '../..';
 import { RemoveStudentIcon } from '../../../assets';
 import { gradeList } from '../../../assets/mock';
@@ -17,10 +18,22 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     const dispatch = useAppDispatch();
     const { removeStudent } = studentSlice.actions;
 
+    const item = useRef<HTMLDivElement>(null);
+
     const handleEdit = () => {};
 
+    const test = () => {
+        dispatch(removeStudent(index));
+    };
+
     const handleRemove = () => {
-        dispatch(removeStudent(index))
+        // if (item.current !== null) {
+        //     item.current.style.scale = '0';
+        //     item.current.style.transition = 'scale 0.15s ease';
+        //     setTimeout(test, 2000);
+        // }
+        dispatch(removeStudent(index));
+        
     };
 
     const validations = {
@@ -41,7 +54,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     };
 
     return (
-        <div className={styles.student}>
+        <div className={styles.student} ref={item}>
             <Input value={student.name} isDisabled={isDisabled} />
             <Select
                 value={student.grade}
@@ -49,7 +62,12 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
                 isDisabled={isDisabled}
             />
             <Input value={student.score} isDisabled={isDisabled} />
-            {modal && <RemoveStudentIcon className={styles.remove} onClick={handleRemove}/>}
+            {modal && (
+                <RemoveStudentIcon
+                    className={styles.remove}
+                    onClick={handleRemove}
+                />
+            )}
         </div>
     );
 };
