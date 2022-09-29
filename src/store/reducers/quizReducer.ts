@@ -7,6 +7,7 @@ const initialState: QuizState = {
     quizTheme: '',
     quiz: {
         name: '',
+        id: 0,
         terms: '',
         theme: '',
         questions: [],

@@ -1,5 +1,6 @@
 export interface Quiz {
     name: string;
+    id: number;
     terms: string;
     theme: string;
     questions: Array<{
