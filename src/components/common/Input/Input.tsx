@@ -9,9 +9,10 @@ interface Props {
     isScore?: boolean;
     type?: string;
     isDisabled?: boolean;
+    error?: string;
 }
 
-const FormInput: React.FC<Props> = ({
+const Input: React.FC<Props> = ({
     isScore,
     width,
     height,
@@ -19,14 +20,16 @@ const FormInput: React.FC<Props> = ({
     placeholder,
     value,
     type,
-    isDisabled
+    isDisabled,
+    error
 }) => {
-
     return (
         <div className={styles.inputWrapper}>
             <input
                 disabled={isDisabled}
-                className={`${styles.input} ${isScore && styles.score}`}
+                className={`${styles.input}  ${isScore && styles.score} ${
+                    error && styles.error
+                }`}
                 type={type}
                 style={{
                     width: `${width}`,
@@ -34,10 +37,11 @@ const FormInput: React.FC<Props> = ({
                     fontSize: `${fontSize}`,
                 }}
                 placeholder={placeholder}
+                value={value}
             />
-            <span>ошибка</span>
+            {error && <span>{error}</span>}
         </div>
     );
 };
 
-export default FormInput;
+export default Input;

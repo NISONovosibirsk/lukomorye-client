@@ -1,11 +1,12 @@
 import { FormProvider, useForm, useFormContext } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
+import { studentSlice } from '../../../store/reducers/studentReducer';
 import StudentItem from '../StudentItem/StudentItem';
 import styles from './TeacherData.module.scss';
 
 const TeacherData: React.FC = () => {
-    const { studentsList } = useAppSelector(state => state.userReducer);
+    const { studentList } = useAppSelector(state => state.studentReducer);
     const dispatch = useAppDispatch();
     const { updateModal } = statusSlice.actions;
     const methods = useForm({ mode: 'onChange' });
@@ -19,7 +20,7 @@ const TeacherData: React.FC = () => {
             <h4>Список участников тестирования</h4>
             <FormProvider {...methods}>
                 <form className={styles.studentsForm}>
-                    {studentsList.map((student, index) => (
+                    {studentList.map((student, index) => (
                         <StudentItem
                             student={student}
                             key={index}

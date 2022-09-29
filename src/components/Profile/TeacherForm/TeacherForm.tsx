@@ -1,23 +1,17 @@
 import { AddIcon } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
-import { userSlice } from '../../../store/reducers/userReducer';
 import { StudentItem, Button } from '../../';
 import styles from './TeacherForm.module.scss';
-import { FormProvider, useForm } from 'react-hook-form';
+import { studentSlice } from '../../../store/reducers/studentReducer';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const TeacherForm: React.FC = () => {
-    const { studentsList } = useAppSelector(state => state.userReducer);
-    const { addStudent } = userSlice.actions;
+    const { studentList } = useAppSelector(state => state.studentReducer);
+    const { addStudent } = studentSlice.actions;
     const dispatch = useAppDispatch();
-
-    const methods = useForm({ mode: 'all' });
 
     const handleAdd = () => {
         dispatch(addStudent({ name: '', grade: '', score: 0 }));
-    };
-
-    const onSubmit = (data: any) => {
-        console.log(data);
     };
 
     return (
@@ -29,21 +23,20 @@ const TeacherForm: React.FC = () => {
                     <AddIcon />
                 </div>
             </div>
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <div className={styles.studentsForm}>
-                        {studentsList.map((student, index) => (
-                            <StudentItem student={student} key={index} />
+            <form>
+                <TransitionGroup  className={styles.studentsForm}>
+                    {/* <ul className={styles.studentsForm}> */}
+                        {studentList.map((student, index) => (
+                                <StudentItem
+                                    student={student}
+                                    key={index}
+                                    index={index}
+                                />
                         ))}
-                    </div>
-                    <Button
-                        title='Сохранить'
-                        width='25%'
-                        type='submit'
-                        isDisabled={!methods.formState.isValid}
-                    />
-                </form>
-            </FormProvider>
+                    {/* </ul> */}
+                </TransitionGroup>
+                <Button title='Сохранить' width='25%' type='submit' />
+            </form>
         </div>
     );
 };

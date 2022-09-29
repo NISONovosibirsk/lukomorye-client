@@ -7,7 +7,7 @@ const initialState: StatusState = {
 };
 
 export const statusSlice = createSlice({
-    name: 'user',
+    name: 'status',
     initialState,
     reducers: {
         updateDropDown(state, action: PayloadAction<boolean>) {

@@ -17,10 +17,6 @@ const initialState: UserState = {
         { name: 'Животные Сибири. Повадки белок', points: 60 },
         { name: 'Животные Сибири. Повадки белок', points: 100 },
     ],
-    studentsList: [
-        { name: 'Кирилл Иванов', grade: '1А класс', score: 55 },
-        { name: 'Юлия Петрова', grade: '3В класс', score: 78 },
-    ],
 };
 
 export const userSlice = createSlice({
@@ -33,9 +29,6 @@ export const userSlice = createSlice({
         updateUserPassword(state, action: PayloadAction<string>) {
             state.password = action.payload;
         },
-        addStudent(state, action: PayloadAction<Student>) {
-            state.studentsList.push(action.payload);
-        },
         updateProfile(state, action: PayloadAction<UserState>) {
             state.name = action.payload.name;
             state.post = action.payload.post;
@@ -45,7 +38,7 @@ export const userSlice = createSlice({
         updateAccountData(state, action: PayloadAction<UserAccount>) {
             state.email = action.payload.email;
             state.password = action.payload.confirmPassword;
-        }
+        },
     },
 });
 
