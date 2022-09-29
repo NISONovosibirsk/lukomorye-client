@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: 55% 20% auto auto;
     column-gap: 2vh;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    scale: 1;
+    transition: scale 0.5s ease;
 }
 
 .remove {
@@ -15,5 +15,35 @@
     &:hover {
         scale: 1.1;
         fill: #6d6d6d;
+    }
+}
+
+.exitActive {
+    animation: fade-out 500ms forwards;
+}
+
+.enterActive {
+    animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100px);
+        opacity: 0;
     }
 }
