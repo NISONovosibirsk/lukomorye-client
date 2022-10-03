@@ -10,6 +10,8 @@ interface Props {
     type?: string;
     isDisabled?: boolean;
     error?: string;
+    onChange: any;
+    name: string;
 }
 
 const Input: React.FC<Props> = ({
@@ -21,7 +23,9 @@ const Input: React.FC<Props> = ({
     value,
     type,
     isDisabled,
-    error
+    error,
+    onChange,
+    name,
 }) => {
     return (
         <div className={styles.inputWrapper}>
@@ -38,6 +42,8 @@ const Input: React.FC<Props> = ({
                 }}
                 placeholder={placeholder}
                 value={value}
+                onChange={onChange}
+                name={name}
             />
             {error && <span>{error}</span>}
         </div>
