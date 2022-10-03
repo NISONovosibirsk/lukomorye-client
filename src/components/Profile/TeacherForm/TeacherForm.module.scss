@@ -66,3 +66,33 @@
         color: #545454;
     }
 }
+
+.exitActive {
+    animation: fade-out 200ms forwards;
+}
+
+.enterActive {
+    animation: fade-in 200ms forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}

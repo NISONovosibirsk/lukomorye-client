@@ -25,13 +25,6 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     };
 
     return (
-        <CSSTransition
-            timeout={500}
-            classNames={{
-                exitActive: styles.exitActive,
-                enterActive: styles.enterActive,
-            }}
-        >
             <div className={styles.student}>
                 <Input value={student.name} isDisabled={isDisabled} />
                 <Select
@@ -47,7 +40,6 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
                     />
                 )}
             </div>
-        </CSSTransition>
     );
 };
 

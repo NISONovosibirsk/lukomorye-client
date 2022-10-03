@@ -24,16 +24,19 @@ const TeacherForm: React.FC = () => {
                 </div>
             </div>
             <form>
-                <TransitionGroup  className={styles.studentsForm}>
-                    {/* <ul className={styles.studentsForm}> */}
-                        {studentList.map((student, index) => (
-                                <StudentItem
-                                    student={student}
-                                    key={index}
-                                    index={index}
-                                />
-                        ))}
-                    {/* </ul> */}
+                <TransitionGroup className={styles.studentsForm}>
+                    {studentList.map((student, index) => (
+                        <CSSTransition
+                            key={index}
+                            timeout={200}
+                            classNames={{
+                                exitActive: styles.exitActive,
+                                enterActive: styles.enterActive,
+                            }}
+                        >
+                            <StudentItem student={student} index={index} />
+                        </CSSTransition>
+                    ))}
                 </TransitionGroup>
                 <Button title='Сохранить' width='25%' type='submit' />
             </form>
