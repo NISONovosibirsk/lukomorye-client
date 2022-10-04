@@ -15,9 +15,9 @@ interface Props {
 
 const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     const { modal } = useAppSelector(state => state.statusReducer);
-    const { studentList } = useAppSelector(state => state.studentReducer);
+    const { studentList, isDirty } = useAppSelector(state => state.studentReducer);
     const dispatch = useAppDispatch();
-    const { removeStudent, editStudent } = studentSlice.actions;
+    const { removeStudent, editStudent, setIsDirty } = studentSlice.actions;
 
     const handleEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newState = { ...studentList[index] };
@@ -42,6 +42,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
 
     const handleRemove = () => {
         dispatch(removeStudent(index));
+        !isDirty && dispatch(setIsDirty(true));
     };
 
     return (

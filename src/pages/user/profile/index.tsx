@@ -17,8 +17,10 @@ import styles from './profile.module.scss';
 const Profile = () => {
     const { name } = useAppSelector(state => state.userReducer);
     const { modal } = useAppSelector(state => state.statusReducer);
+    const { isDirty } = useAppSelector(state => state.studentReducer);
     const { updateModal } = statusSlice.actions;
     const { updateStudentList } = studentSlice.actions;
+    const { setIsDirty } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -36,6 +38,7 @@ const Profile = () => {
 
     const handleClose: () => void = () => {
         dispatch(updateModal(false));
+        isDirty && dispatch(setIsDirty(false));
     };
 
     return (
