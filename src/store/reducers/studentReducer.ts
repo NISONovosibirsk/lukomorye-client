@@ -3,10 +3,7 @@ import { Student } from '../../types/profileTypes';
 import { StudentState } from '../../types/reduxTypes';
 
 const initialState: StudentState = {
-    studentList: [
-        { name: 'Кирилл Иванов', grade: '1А класс', score: 55 },
-        { name: 'Юлия Петрова', grade: '3В класс', score: 78 },
-    ],
+    studentList: [],
 };
 
 export const studentSlice = createSlice({
@@ -16,9 +13,9 @@ export const studentSlice = createSlice({
         addStudent(state, action: PayloadAction<Student>) {
             state.studentList.push(action.payload);
         },
-        // editStudent(state, action:PayloadAction<any>) {
-            
-        // }
+        editStudent(state, action:PayloadAction<any>) {
+            state.studentList[action.payload.index] = action.payload.student;
+        },
         removeStudent(state, action: PayloadAction<number>) {
             state.studentList.splice(action.payload, 1);
         },

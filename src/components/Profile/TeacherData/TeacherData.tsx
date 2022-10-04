@@ -1,7 +1,6 @@
 import { FormProvider, useForm, useFormContext } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
-import { studentSlice } from '../../../store/reducers/studentReducer';
 import StudentItem from '../StudentItem/StudentItem';
 import styles from './TeacherData.module.scss';
 
@@ -22,6 +21,7 @@ const TeacherData: React.FC = () => {
                 <form className={styles.studentsForm}>
                     {studentList.map((student, index) => (
                         <StudentItem
+                            index={index}
                             student={student}
                             key={index}
                             isDisabled={true}

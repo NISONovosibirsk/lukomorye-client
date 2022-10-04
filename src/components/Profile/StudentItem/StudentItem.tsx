@@ -17,22 +17,27 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     const { modal } = useAppSelector(state => state.statusReducer);
     const { studentList } = useAppSelector(state => state.studentReducer);
     const dispatch = useAppDispatch();
-    const { removeStudent } = studentSlice.actions;
+    const { removeStudent, editStudent } = studentSlice.actions;
 
     const handleEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newState = studentList[index];
-        const { name } = e.target;
+        const newState = { ...studentList[index] };
+        const { name, value } = e.target;
 
         switch (name) {
             case 'name':
-                newState.name = e.target.value;
+                newState.name = value;
+                break;
             case 'grade':
-                newState.grade = e.target.value;
+                newState.grade = value;
+                break;
             case 'score':
-                newState.score = e.target.value;
+                newState.score = value;
+                break;
             default:
                 break;
         }
+
+        dispatch(editStudent({ index: index, student: newState }));
     };
 
     const handleRemove = () => {

@@ -1,4 +1,5 @@
-import { ReactElement } from 'react';
+import axios from 'axios';
+import { ReactElement, useEffect } from 'react';
 import {
     AccountData,
     Modal,
@@ -10,12 +11,28 @@ import {
 } from '../../../components';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
+import { studentSlice } from '../../../store/reducers/studentReducer';
 import styles from './profile.module.scss';
 
 const Profile = () => {
     const { name } = useAppSelector(state => state.userReducer);
+    const { modal } = useAppSelector(state => state.statusReducer);
     const { updateModal } = statusSlice.actions;
+    const { updateStudentList } = studentSlice.actions;
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                await axios.get('../quizMock.json').then(response => {
+                    dispatch(updateStudentList(response.data.students));
+                });
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getData();
+    }, [modal]);
 
     const handleClose: () => void = () => {
         dispatch(updateModal(false));

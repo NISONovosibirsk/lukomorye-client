@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { statusSlice } from '../../store/reducers/statusReducer';
 import axios from 'axios';
 import { quizSlice } from '../../store/reducers/quizReducer';
+import { studentSlice } from '../../store/reducers/studentReducer';
 
 const User: NextPageWithLayout = () => {
     const { updateModal } = statusSlice.actions;
