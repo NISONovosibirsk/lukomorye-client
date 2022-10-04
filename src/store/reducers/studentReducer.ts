@@ -13,8 +13,12 @@ export const studentSlice = createSlice({
         addStudent(state, action: PayloadAction<Student>) {
             state.studentList.push(action.payload);
         },
-        editStudent(state, action:PayloadAction<any>) {
-            state.studentList[action.payload.index] = action.payload.student;
+        editStudent(
+            state,
+            action: PayloadAction<{ index: number; student: Student }>
+        ) {
+            const { index, student } = action.payload;
+            state.studentList[index] = student;
         },
         removeStudent(state, action: PayloadAction<number>) {
             state.studentList.splice(action.payload, 1);

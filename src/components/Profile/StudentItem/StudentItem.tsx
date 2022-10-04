@@ -56,6 +56,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
                 value={student.grade}
                 options={gradeList}
                 isDisabled={isDisabled}
+                onChange={handleEdit}
             />
             <Input
                 value={student.score}
