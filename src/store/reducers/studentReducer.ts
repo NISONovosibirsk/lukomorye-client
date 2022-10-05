@@ -5,6 +5,8 @@ import { StudentState } from '../../types/reduxTypes';
 const initialState: StudentState = {
     studentList: [],
     isDirty: false,
+    isValid: false,
+    error: '',
 };
 
 export const studentSlice = createSlice({
@@ -29,6 +31,12 @@ export const studentSlice = createSlice({
         },
         setIsDirty(state, action: PayloadAction<boolean>) {
             state.isDirty = action.payload;
+        },
+        setError(state, action: PayloadAction<string>) {
+            state.error = action.payload;
+        },
+        setIsValid(state, action: PayloadAction<boolean>) {
+            state.isValid = action.payload;
         },
     },
 });

@@ -4,10 +4,9 @@ import { StudentItem, Button } from '../../';
 import styles from './TeacherForm.module.scss';
 import { studentSlice } from '../../../store/reducers/studentReducer';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { useEffect } from 'react';
 
 const TeacherForm: React.FC = () => {
-    const { studentList, isDirty } = useAppSelector(
+    const { studentList, isDirty, error } = useAppSelector(
         state => state.studentReducer
     );
     const { addStudent, setIsDirty } = studentSlice.actions;
@@ -42,6 +41,7 @@ const TeacherForm: React.FC = () => {
                         </CSSTransition>
                     ))}
                 </TransitionGroup>
+                <span className={styles.error}>{error}</span>
                 <Button
                     title='Сохранить'
                     width='25%'

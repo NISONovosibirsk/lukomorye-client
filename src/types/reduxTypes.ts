@@ -17,6 +17,8 @@ export interface UserState {
 export interface StudentState {
     studentList: Array<Student>;
     isDirty: boolean;
+    isValid: boolean;
+    error: string;
 }
 
 export interface UserAccount {

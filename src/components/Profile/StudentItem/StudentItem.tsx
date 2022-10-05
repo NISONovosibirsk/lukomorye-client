@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Select, Input } from '../..';
 import { RemoveStudentIcon } from '../../../assets';
 import { gradeList } from '../../../assets/mock';
@@ -15,17 +15,25 @@ interface Props {
 
 const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     const { modal } = useAppSelector(state => state.statusReducer);
-    const { studentList, isDirty } = useAppSelector(state => state.studentReducer);
+    const { studentList, isDirty, isValid } = useAppSelector(
+        state => state.studentReducer
+    );
     const dispatch = useAppDispatch();
-    const { removeStudent, editStudent, setIsDirty } = studentSlice.actions;
+    const { removeStudent, editStudent, setIsDirty, setError, setIsValid } =
+        studentSlice.actions;
 
     const handleEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newState = { ...studentList[index] };
-        const { name, value } = e.target;
+        const { name, value, validationMessage } = e.target;
+        e.preventDefault();
 
         switch (name) {
             case 'name':
                 newState.name = value;
+                dispatch(
+                    setError(validationMessage && `**${validationMessage}`)
+                );
+                dispatch(setIsValid(e.target.checkValidity() ? true : false));
                 break;
             case 'grade':
                 newState.grade = value;
@@ -48,6 +56,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     return (
         <div className={styles.student}>
             <Input
+                required={true}
                 value={student.name}
                 isDisabled={isDisabled}
                 onChange={handleEdit}
@@ -61,9 +70,10 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
             />
             <Input
                 value={student.score}
-                isDisabled={isDisabled}
+                isDisabled={true}
                 onChange={handleEdit}
                 name={'score'}
+                isScore={true}
             />
             {modal && (
                 <RemoveStudentIcon

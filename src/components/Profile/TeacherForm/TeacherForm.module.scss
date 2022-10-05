@@ -24,9 +24,10 @@
 
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: auto 8%;
+        grid-template-rows: auto 4% 8%;
         grid-template-areas:
             'Inputs'
+            'Error'
             'Button';
 
         button {
@@ -65,6 +66,13 @@
     &:active {
         color: #545454;
     }
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    justify-self: start;
+    animation: fade-in 200ms forwards;
 }
 
 .exitActive {

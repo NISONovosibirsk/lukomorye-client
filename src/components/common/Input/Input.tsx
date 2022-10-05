@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styles from './Input.module.scss';
 
 interface Props {
@@ -9,9 +10,10 @@ interface Props {
     isScore?: boolean;
     type?: string;
     isDisabled?: boolean;
-    error?: string;
+    error?: string | boolean;
     onChange: any;
     name: string;
+    required?: boolean;
 }
 
 const Input: React.FC<Props> = ({
@@ -26,10 +28,12 @@ const Input: React.FC<Props> = ({
     error,
     onChange,
     name,
+    required,
 }) => {
     return (
         <div className={styles.inputWrapper}>
             <input
+                required={required}
                 disabled={isDisabled}
                 className={`${styles.input}  ${isScore && styles.score} ${
                     error && styles.error
@@ -45,7 +49,6 @@ const Input: React.FC<Props> = ({
                 onChange={onChange}
                 name={name}
             />
-            {error && <span>{error}</span>}
         </div>
     );
 };
