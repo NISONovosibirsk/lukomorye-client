@@ -16,6 +16,7 @@ export { default as StudentItem } from './Profile/StudentItem/StudentItem';
 export { default as ProfileAvatar } from './Profile/ProfileAvatar/ProfileAvatar';
 export { default as TeacherForm } from './Profile/TeacherForm/TeacherForm';
 export { default as TeacherData } from './Profile/TeacherData/TeacherData';
+export { default as TeacherDataItem } from './Profile/TeacherDataItem/TeacherDataItem';
 
 //QUIZ
 export { default as QuizLayout } from './Quiz/QuizLayout/QuizLayout';

@@ -29,9 +29,6 @@ export const studentSlice = createSlice({
         updateStudentList(state, action: PayloadAction<[Student]>) {
             state.studentList = action.payload;
         },
-        setIsDirty(state, action: PayloadAction<boolean>) {
-            state.isDirty = action.payload;
-        },
         setError(state, action: PayloadAction<string>) {
             state.error = action.payload;
         },

@@ -9,12 +9,11 @@ const TeacherForm: React.FC = () => {
     const { studentList, error } = useAppSelector(
         state => state.studentReducer
     );
-    const { addStudent, setIsDirty } = studentSlice.actions;
+    const { addStudent } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
     const handleAdd = () => {
-        dispatch(addStudent({ name: '', grade: '1A', score: 0 }));
-        // !isDirty && dispatch(setIsDirty(true));
+        !error && dispatch(addStudent({ name: '', grade: '1A', score: 0 }));
     };
 
     return (
@@ -46,7 +45,7 @@ const TeacherForm: React.FC = () => {
                     title='Сохранить'
                     width='25%'
                     type='submit'
-                    isDisabled={error ? true: false}
+                    isDisabled={error ? true : false}
                 />
             </form>
         </div>

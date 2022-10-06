@@ -1,0 +1,22 @@
+.student {
+    display: grid;
+    grid-template-columns: 60% 20% auto;
+    column-gap: 2vh;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    padding: {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+.name {
+    justify-content: start;
+}
