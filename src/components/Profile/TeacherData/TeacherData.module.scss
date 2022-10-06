@@ -43,6 +43,8 @@
 .studentsForm {
     display: grid;
     gap: 1.5vh;
-    grid-template-rows: repeat(auto-fill, 4vh);
+    grid-template-rows: auto;
     grid-template-columns: 100%;
+    height: 240px;
+    overflow-y: scroll;
 }
