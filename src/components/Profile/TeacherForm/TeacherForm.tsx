@@ -6,15 +6,15 @@ import { studentSlice } from '../../../store/reducers/studentReducer';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const TeacherForm: React.FC = () => {
-    const { studentList, isDirty, error } = useAppSelector(
+    const { studentList, error } = useAppSelector(
         state => state.studentReducer
     );
     const { addStudent, setIsDirty } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
     const handleAdd = () => {
-        dispatch(addStudent({ name: '', grade: '', score: 0 }));
-        !isDirty && dispatch(setIsDirty(true));
+        dispatch(addStudent({ name: '', grade: '1A', score: 0 }));
+        // !isDirty && dispatch(setIsDirty(true));
     };
 
     return (
@@ -46,7 +46,7 @@ const TeacherForm: React.FC = () => {
                     title='Сохранить'
                     width='25%'
                     type='submit'
-                    isDisabled={!isDirty}
+                    isDisabled={error ? true: false}
                 />
             </form>
         </div>

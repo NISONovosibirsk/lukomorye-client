@@ -19,8 +19,8 @@ const Profile = () => {
     const { modal } = useAppSelector(state => state.statusReducer);
     const { isDirty } = useAppSelector(state => state.studentReducer);
     const { updateModal } = statusSlice.actions;
-    const { updateStudentList } = studentSlice.actions;
-    const { setIsDirty } = studentSlice.actions;
+    const { updateStudentList, resetForm } = studentSlice.actions;
+    // const { setIsDirty } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const Profile = () => {
 
     const handleClose: () => void = () => {
         dispatch(updateModal(false));
-        isDirty && dispatch(setIsDirty(false));
+        dispatch(resetForm());
     };
 
     return (

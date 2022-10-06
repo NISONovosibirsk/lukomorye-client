@@ -15,17 +15,22 @@ interface Props {
 
 const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
     const { modal } = useAppSelector(state => state.statusReducer);
-    const { studentList, isDirty, isValid } = useAppSelector(
+    const { studentList } = useAppSelector(
         state => state.studentReducer
     );
     const dispatch = useAppDispatch();
-    const { removeStudent, editStudent, setIsDirty, setError, setIsValid } =
+    const { removeStudent, editStudent, setIsDirty, setError } =
         studentSlice.actions;
+
+    const [inputError, setInputError] = useState(false);
+
+    useEffect(() => {
+        !modal && setInputError(false);
+    }, [modal]);
 
     const handleEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newState = { ...studentList[index] };
         const { name, value, validationMessage } = e.target;
-        e.preventDefault();
 
         switch (name) {
             case 'name':
@@ -33,7 +38,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
                 dispatch(
                     setError(validationMessage && `**${validationMessage}`)
                 );
-                dispatch(setIsValid(e.target.checkValidity() ? true : false));
+                setInputError(validationMessage ? true : false);
                 break;
             case 'grade':
                 newState.grade = value;
@@ -50,7 +55,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
 
     const handleRemove = () => {
         dispatch(removeStudent(index));
-        !isDirty && dispatch(setIsDirty(true));
+        // !isDirty && dispatch(setIsDirty(true));
     };
 
     return (
@@ -61,6 +66,7 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
                 isDisabled={isDisabled}
                 onChange={handleEdit}
                 name={'name'}
+                error={inputError}
             />
             <Select
                 value={student.grade}

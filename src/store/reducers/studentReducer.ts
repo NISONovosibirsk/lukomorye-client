@@ -38,6 +38,7 @@ export const studentSlice = createSlice({
         setIsValid(state, action: PayloadAction<boolean>) {
             state.isValid = action.payload;
         },
+        resetForm: () => initialState,
     },
 });
 
