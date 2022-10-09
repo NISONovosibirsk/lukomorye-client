@@ -20,7 +20,14 @@ const TeacherForm: React.FC = () => {
         <div className={styles.teacherForm}>
             <div className={styles.header}>
                 <h4>Список участников тестирования</h4>
-                <div className={styles.addStudent} onClick={handleAdd}>
+                <div
+                    className={
+                        error
+                            ? `${styles.addStudent} ${styles.disabled}`
+                            : styles.addStudent
+                    }
+                    onClick={handleAdd}
+                >
                     Добавить участника
                     <AddIcon />
                 </div>

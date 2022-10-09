@@ -68,6 +68,17 @@
     }
 }
 
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+
+    &:hover {
+        scale: 1;
+        transition: none;
+        color: #545454;
+    }
+}
+
 .error {
     color: red;
     font-style: italic;
