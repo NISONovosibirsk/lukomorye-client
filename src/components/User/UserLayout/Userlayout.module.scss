@@ -1,0 +1,27 @@
+.user {
+    height: 108vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 8vh auto 8vh;
+    grid-template-areas: 
+        'userHeader'
+        'userBody'
+        'userFooter';
+}
+
+.body {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        'sidebar content';
+}
+
+.content {
+    padding: {
+        top: 2.5vh;
+        bottom: 3vh;
+        left: 3vw;
+        right: 1.5vw;
+    };
+}

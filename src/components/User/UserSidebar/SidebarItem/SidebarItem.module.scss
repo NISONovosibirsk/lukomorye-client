@@ -1,0 +1,50 @@
+.sidebarItem {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+
+.results {
+    display: flex;
+    column-gap: 2vw;
+}
+
+.info {
+    display: flex;
+    column-gap: 0.5vw;
+}
+
+.score {
+    display: flex;
+    font-weight: 700;
+    color: #545454;
+    column-gap: 0.5vw;
+}
+
+.points {
+    color: #E5C100;
+
+    fill: #E5C100;
+}
+
+.orange {
+    color: #EC7D1A;
+
+    fill: #EC7D1A;;
+}
+
+.certificates {
+    display: flex;
+    column-gap: 0.5vw;
+    font-weight: 700;
+    color: #545454;
+    svg {
+        height: 100%;
+    }
+}
+
+.name {
+    color: #43B05C;
+    font-size: 1em;
+    font-weight: 700;
+}

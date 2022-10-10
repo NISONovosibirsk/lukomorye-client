@@ -1,0 +1,18 @@
+.quiz {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100%;
+    width: 35vw;
+    min-height: 30vh;
+    row-gap: 2vh;
+    place-items: center;
+
+    button {
+        align-self: end;
+    }
+}
+
+.header {
+    color: #545454;
+    align-self: start;
+}
