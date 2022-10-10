@@ -5,7 +5,6 @@ export { default as UserFooter } from './User/UserFooter/UserFooter';
 export { default as ProgressBar } from './User/UserSidebar/ProgressBar/ProgressBar';
 export { default as SidebarItem } from './User/UserSidebar/SidebarItem/SidebarItem';
 export { default as UserLayout } from './User/UserLayout/UserLayout';
-export { default as QuizCard } from './User/QuizCard/QuizCard';
 export { default as DropDown } from './User/DropDown/DropDown';
 
 // PROFILE //
@@ -21,6 +20,7 @@ export { default as TeacherDataItem } from './Profile/TeacherDataItem/TeacherDat
 //QUIZ
 export { default as QuizLayout } from './Quiz/QuizLayout/QuizLayout';
 export { default as QuizInfo } from './Quiz/QuizInfo/QuizInfo';
+export { default as QuizCard } from './Quiz/QuizCard/QuizCard';
 
 // COMMON //
 export { default as Button } from './common/Button/Button';
@@ -30,3 +30,6 @@ export { default as FormSelect } from './common/FormSelect/FormSelect';
 export { default as FormInput } from './common/FormInput/FormInput';
 export { default as PasswordInput } from './common/PasswordInput/PasswordInput';
 export { default as Modal } from './common/Modal/Modal';
+
+// AUTH //
+export { default as SignInForm } from './Authorization/SignInForm/SignInForm';

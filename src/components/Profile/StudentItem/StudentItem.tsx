@@ -14,13 +14,11 @@ interface Props {
 }
 
 const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
-    const { modal } = useAppSelector(state => state.statusReducer);
     const { studentList, error } = useAppSelector(
         state => state.studentReducer
     );
     const dispatch = useAppDispatch();
-    const { removeStudent, editStudent, setError } =
-        studentSlice.actions;
+    const { removeStudent, editStudent, setError } = studentSlice.actions;
 
     const [inputError, setInputError] = useState(false);
 
@@ -89,12 +87,10 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
                 name={'score'}
                 isScore={true}
             />
-            {modal && (
-                <RemoveStudentIcon
-                    className={styles.remove}
-                    onClick={handleRemove}
-                />
-            )}
+            <RemoveStudentIcon
+                className={styles.remove}
+                onClick={handleRemove}
+            />
         </div>
     );
 };

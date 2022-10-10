@@ -1,0 +1,9 @@
+.authorization {
+    height: 108vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 8vh;
+    grid-template-areas: 
+        'authContent'
+        'UserFooter';
+}
