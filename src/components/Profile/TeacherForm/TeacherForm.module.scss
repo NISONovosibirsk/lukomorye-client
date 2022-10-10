@@ -41,6 +41,8 @@
     display: grid;
     gap: 2.5vh;
     grid-template-rows: repeat(auto-fill, 4.5vh);
+    overflow-y: scroll;
+    height: 60vh;
 }
 
 .header {

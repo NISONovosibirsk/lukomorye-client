@@ -14,7 +14,7 @@ export const studentSlice = createSlice({
     initialState,
     reducers: {
         addStudent(state, action: PayloadAction<Student>) {
-            state.studentList.push(action.payload);
+            state.studentList.unshift(action.payload);
         },
         editStudent(
             state,
