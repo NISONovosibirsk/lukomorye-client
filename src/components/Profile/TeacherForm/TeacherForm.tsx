@@ -4,6 +4,7 @@ import { StudentItem, Button } from '../../';
 import styles from './TeacherForm.module.scss';
 import { studentSlice } from '../../../store/reducers/studentReducer';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { v4 as uuidv4 } from 'uuid';
 
 const TeacherForm: React.FC = () => {
     const { studentList, error } = useAppSelector(
@@ -13,7 +14,7 @@ const TeacherForm: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const handleAdd = () => {
-        !error && dispatch(addStudent({ name: '', grade: '1A', score: 0 }));
+        !error && dispatch(addStudent({ name: '', grade: '1A', score: 0, id: uuidv4() }));
     };
 
     return (
@@ -36,7 +37,7 @@ const TeacherForm: React.FC = () => {
                 <TransitionGroup className={styles.studentsForm}>
                     {studentList.map((student, index) => (
                         <CSSTransition
-                            key={index}
+                            key={student.id}
                             timeout={200}
                             classNames={{
                                 exitActive: styles.exitActive,

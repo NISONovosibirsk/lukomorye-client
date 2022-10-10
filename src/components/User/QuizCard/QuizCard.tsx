@@ -7,7 +7,7 @@ import Button from '../../common/Button/Button';
 import styles from './QuizCard.module.scss';
 
 interface Props {
-    quiz: { name: string; theme: string, id: number };
+    quiz: { name: string; theme: string; id: number };
 }
 
 const QuizCard: React.FC<Props> = ({ quiz }) => {
@@ -50,12 +50,16 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
             {/* <Link href={`/quiz/${quiz.id}`}>
                 <a>Start</a>
             </Link> */}
-            <Link href={{
-              pathname: '/quiz/[slug]',
-              query: {slug: quiz.id}
-            }}>
-              Старт
-            </Link>
+            <div className={styles.button}>
+                <Link
+                    href={{
+                        pathname: '/quiz/[slug]',
+                        query: { slug: quiz.id },
+                    }}
+                >
+                    Старт
+                </Link>
+            </div>
         </li>
     );
 };

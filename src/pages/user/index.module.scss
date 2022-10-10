@@ -3,13 +3,13 @@
     row-gap: 2.5vh;
 
     ul {
+        justify-content: center;
         overflow-y: auto;
         height: 82vh;
         display: grid;
-        grid-template-columns: repeat(auto-fit, 360px);
+        grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
         gap: 2vw;
         padding: {
-            left: 1vw;
             top: 1.5vh;
         }
     }
