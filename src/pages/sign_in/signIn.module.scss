@@ -1,0 +1,15 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.signIn {
+    padding: {
+        top: 2vh;
+    };
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+}

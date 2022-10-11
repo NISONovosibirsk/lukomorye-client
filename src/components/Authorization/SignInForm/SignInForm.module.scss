@@ -1,0 +1,39 @@
+.form {
+    background: #F1F0F0;
+    width: 70%;
+    height: 45%;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto repeat(2, 4.5vh) auto repeat(2, 5%);
+    gap: 3vh;
+    padding: {
+        top: 1.5vh;
+        left: 6%;
+        right: 6%;
+        bottom: 1.5vh;
+    };
+
+    button {
+        place-self: center;
+    }
+
+    p {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.registration {
+    place-self: center;
+}
+
+.remember {
+    place-self: center;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
