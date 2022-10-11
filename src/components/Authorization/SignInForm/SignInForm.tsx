@@ -1,5 +1,5 @@
 import { FormProvider, useForm } from 'react-hook-form';
-import Button from '../../common/Button/Button';
+import { Button, Checkbox } from '../../';
 import FormInput from '../../common/FormInput/FormInput';
 import PasswordInput from '../../common/PasswordInput/PasswordInput';
 import styles from './SignInForm.module.scss';
@@ -54,10 +54,7 @@ const SignInForm: React.FC = () => {
                     type='submit'
                     isDisabled={!methods.formState.isValid}
                 />
-                <label className={styles.remember}>
-                    Запомнить меня
-                    <input type='checkbox' />
-                </label>
+                <Checkbox title={'Запомнить меня'} />
                 <p className={styles.registration}>Зарегистрироваться</p>
             </form>
         </FormProvider>

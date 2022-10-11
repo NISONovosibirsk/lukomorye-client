@@ -1,18 +1,18 @@
 .form {
-    background: #F1F0F0;
-    width: 70%;
-    height: 45%;
+    background: #f1f0f0;
+    width: 60%;
+    height: 40%;
     border-radius: 8px;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 5% repeat(2, 4.5vh) auto repeat(2, 5%);
-    gap: 3vh;
+    grid-template-rows: 5% repeat(2, 4.5vh) 5% 15% repeat(2, 5%);
+    gap: 2.5vh;
     padding: {
         top: 1.5vh;
         left: 6%;
         right: 6%;
-        bottom: 1.5vh;
-    };
+        bottom: 2vh;
+    }
 
     button {
         place-self: center;
@@ -29,11 +29,4 @@
 
 .registration {
     place-self: center;
-}
-
-.remember {
-    place-self: center;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
 }

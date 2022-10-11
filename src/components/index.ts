@@ -30,6 +30,7 @@ export { default as FormSelect } from './common/FormSelect/FormSelect';
 export { default as FormInput } from './common/FormInput/FormInput';
 export { default as PasswordInput } from './common/PasswordInput/PasswordInput';
 export { default as Modal } from './common/Modal/Modal';
+export { default as Checkbox } from './common/Checkbox/Checkbox';
 
 // AUTH //
 export { default as SignInForm } from './Authorization/SignInForm/SignInForm';
