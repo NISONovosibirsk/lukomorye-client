@@ -1,0 +1,54 @@
+.form {
+    background: #f1f0f0;
+    width: 60%;
+    height: 95%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    scale: 1;
+    padding: {
+        top: 1.5vh;
+        left: 6%;
+        right: 6%;
+        bottom: 2vh;
+    }
+
+    h4 {
+        color: #545454;
+    }
+
+    button {
+        place-self: center;
+    }
+}
+
+.selects {
+    display: grid;
+    gap: 1.5vh;
+}
+
+.inputs {
+    display: grid;
+    gap: 2.5vh;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 4vh;
+    color: #545454;
+    gap: 5px;
+}
+
+.radio {
+    display: flex;
+    gap: 20px;
+}
+
+.terms {
+    color: #545454;
+    width: 50%;
+    place-self: center;
+    font-size: 0.8rem;
+}

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Button, Checkbox } from '../../';
 import FormInput from '../../common/FormInput/FormInput';
@@ -50,12 +51,15 @@ const SignInForm: React.FC = () => {
                 <p>Не помню пароль</p>
                 <Button
                     title={'Войти'}
-                    width={'40%'}
+                    width={'50%'}
                     type='submit'
                     isDisabled={!methods.formState.isValid}
                 />
                 <Checkbox title={'Запомнить меня'} />
-                <p className={styles.registration}>Зарегистрироваться</p>
+                {/* <p className={styles.registration}>Зарегистрироваться</p> */}
+                <Link href={'/sign_up'}>
+                    <a className={styles.registration}>Зарегистрироваться</a>
+                </Link>
             </form>
         </FormProvider>
     );

@@ -14,12 +14,17 @@
         bottom: 2vh;
     }
 
+    h4 {
+        color: #545454;
+    }
+
     button {
         place-self: center;
     }
 
     p {
         cursor: pointer;
+        color: #545454;
 
         &:hover {
             text-decoration: underline;
@@ -29,4 +34,10 @@
 
 .registration {
     place-self: center;
+    cursor: pointer;
+    color: #545454;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

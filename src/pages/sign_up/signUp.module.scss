@@ -4,16 +4,10 @@
     grid-template-columns: repeat(2, 50%);
 }
 
-.caption {
-    color: #545454;
-}
-
-.signIn {
+.signUp {
     padding: {
         top: 2vh;
     };
     display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    align-items: center;
+    justify-content: center;
 }

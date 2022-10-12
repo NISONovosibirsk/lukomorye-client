@@ -16,6 +16,7 @@ const Index = () => {
             <Link href={'/user'}>Пользователь</Link>
             {/* <Link href={'/quiz'}>Викторина</Link> */}
             <Link href={'/sign_in'}>Вход</Link>
+            <Link href={'/sign_up'}>Регистрация</Link>
         </div>
     );
 };

@@ -31,6 +31,9 @@ export { default as FormInput } from './common/FormInput/FormInput';
 export { default as PasswordInput } from './common/PasswordInput/PasswordInput';
 export { default as Modal } from './common/Modal/Modal';
 export { default as Checkbox } from './common/Checkbox/Checkbox';
+export { default as RadioButton } from './common/RadioButton/RadioButton';
 
 // AUTH //
+export { default as AuthorizationLayout } from './Authorization/AuthorizationLayout/AuthorizationLayout';
 export { default as SignInForm } from './Authorization/SignInForm/SignInForm';
+export { default as SignUpForm } from './Authorization/SignUpForm/SignUpForm';
