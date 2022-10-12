@@ -152,7 +152,6 @@ const SignUpForm: React.FC = () => {
                         персональных данных
                     </p>
                 </div>
-                {/* {methods.formState.errors && <span>{methods.formState.errors.confirmPassword?.message}</span>} */}
             </form>
         </FormProvider>
     );

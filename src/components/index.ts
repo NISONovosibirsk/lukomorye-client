@@ -37,3 +37,5 @@ export { default as RadioButton } from './common/RadioButton/RadioButton';
 export { default as AuthorizationLayout } from './Authorization/AuthorizationLayout/AuthorizationLayout';
 export { default as SignInForm } from './Authorization/SignInForm/SignInForm';
 export { default as SignUpForm } from './Authorization/SignUpForm/SignUpForm';
+export { default as RecoveryForm } from './Authorization/RecoveryForm/RecoveryForm';
+export { default as NewPasswordForm } from './Authorization/NewPasswordForm/NewPasswordForm';

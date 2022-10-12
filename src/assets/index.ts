@@ -17,5 +17,6 @@ export { default as ShowIcon } from './icons/profileIcons/show-icon.svg';
 export { default as AddIcon } from './icons/profileIcons/add-icon.svg';
 export { default as RemoveStudentIcon } from './icons/profileIcons/remove-student-icon.svg';
 
-// Auth //
-export { default as AuthImage } from './images/auth-image.svg';
+// Logo //
+export { default as FullLogo } from './images/full-logo.svg';
+export { default as FlatLogo } from './images/flat-logo.svg';

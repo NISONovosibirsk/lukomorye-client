@@ -48,7 +48,9 @@ const SignInForm: React.FC = () => {
                     placeholder={'Пароль'}
                     validations={validations.password}
                 />
-                <p>Не помню пароль</p>
+                <Link href={'/password-recovery'}>
+                    <a className={styles.link}>Не помню пароль</a>
+                </Link>
                 <Button
                     title={'Войти'}
                     width={'50%'}
@@ -56,9 +58,8 @@ const SignInForm: React.FC = () => {
                     isDisabled={!methods.formState.isValid}
                 />
                 <Checkbox title={'Запомнить меня'} />
-                {/* <p className={styles.registration}>Зарегистрироваться</p> */}
                 <Link href={'/sign_up'}>
-                    <a className={styles.registration}>Зарегистрироваться</a>
+                    <a className={styles.link}>Зарегистрироваться</a>
                 </Link>
             </form>
         </FormProvider>

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { AuthorizationLayout, SignUpForm } from '../../components';
 import { NextPageWithLayout } from '../_app';
-import { AuthImage } from '../../assets';
+import { FullLogo } from '../../assets';
 import styles from './signUp.module.scss';
 
 const SignUp: NextPageWithLayout = () => {
@@ -10,7 +10,7 @@ const SignUp: NextPageWithLayout = () => {
             <div className={styles.signUp}>
                 <SignUpForm />
             </div>
-            <AuthImage />
+            <FullLogo />
         </div>
     );
 };
