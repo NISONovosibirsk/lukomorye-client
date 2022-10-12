@@ -13,6 +13,7 @@
         right: 6%;
         bottom: 2vh;
     }
+    animation: fade-in 300ms forwards;
 
     h4 {
         color: #545454;
@@ -39,5 +40,16 @@
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
