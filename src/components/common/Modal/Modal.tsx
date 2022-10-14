@@ -1,15 +1,20 @@
+import { useEffect, useRef } from 'react';
 import { useAppSelector } from '../../../hooks/redux';
 import styles from './Modal.module.scss';
 
 interface Props {
     children: React.ReactNode;
     onClose: () => void;
-    width?: string;
-    height?: string;
 }
 
-const Modal: React.FC<Props> = ({ children, onClose, height, width }) => {
+const Modal: React.FC<Props> = ({ children, onClose }) => {
     const { modal } = useAppSelector(state => state.statusReducer);
+
+    useEffect(() => {
+        modal
+            ? (document.body.style.overflow = 'hidden')
+            : (document.body.style.overflow = 'auto');
+    }, [modal]);
 
     return (
         <div
@@ -17,9 +22,8 @@ const Modal: React.FC<Props> = ({ children, onClose, height, width }) => {
             onMouseDown={onClose}
         >
             <div
-                className={styles.modalContent}
+                className={`${styles.modalContent} ${modal && styles.open}`}
                 onMouseDown={e => e.stopPropagation()}
-                // style={{ height: `${height}`, width: `${width}` }}
             >
                 {children}
             </div>

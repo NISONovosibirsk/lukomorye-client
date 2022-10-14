@@ -10,7 +10,6 @@ const Index = () => {
                 gap: '3vh',
                 marginLeft: '3vw',
                 marginTop: '3vh',
-                
             }}
         >
             <Link href={'/user'}>Пользователь</Link>
