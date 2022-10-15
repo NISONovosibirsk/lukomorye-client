@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { DropDownIcon } from '../../../assets';
+import { DefaultAvatar, DropDownIcon } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
 import DropDown from '../DropDown/DropDown';
@@ -7,6 +7,7 @@ import styles from './UserHeader.module.scss';
 
 const Header: React.FC = () => {
     const { dropDown } = useAppSelector(state => state.statusReducer);
+    const { avatar } = useAppSelector(state => state.userReducer);
     const { updateDropDown } = statusSlice.actions;
     const dispatch = useAppDispatch();
 
@@ -17,7 +18,13 @@ const Header: React.FC = () => {
     return (
         <div className={styles.header}>
             <div className={styles.controls}>
-                <div className={styles.avatar} onClick={handleOpen}></div>
+                {/* <div className={styles.avatar} onClick={handleOpen}></div> */}
+                {/* <Image src={DefaultAvatar}/> */}
+                {avatar ? (
+                    <Image src={avatar} />
+                ) : (
+                    <DefaultAvatar className={styles.avatar} />
+                )}
                 <DropDownIcon onClick={handleOpen} />
                 {dropDown && <DropDown />}
             </div>

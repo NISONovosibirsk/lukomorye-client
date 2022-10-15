@@ -12,6 +12,7 @@ const initialState: UserState = {
     type: 'teacher',
     photo: {},
     password: 'roman1234',
+    avatar: '',
     passedTests: [
         { name: 'Животные Сибири. Повадки белок', points: 50 },
         { name: 'Животные Сибири. Повадки белок', points: 60 },
