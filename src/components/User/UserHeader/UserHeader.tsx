@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { DropDownIcon } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
