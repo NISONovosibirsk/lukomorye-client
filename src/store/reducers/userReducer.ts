@@ -10,9 +10,8 @@ const initialState: UserState = {
     rating: 70,
     school: 'Гимназия № 1',
     type: 'teacher',
-    photo: {},
+    photo: '',
     password: 'roman1234',
-    avatar: '',
     passedTests: [
         { name: 'Животные Сибири. Повадки белок', points: 50 },
         { name: 'Животные Сибири. Повадки белок', points: 60 },

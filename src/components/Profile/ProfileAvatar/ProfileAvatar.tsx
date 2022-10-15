@@ -14,7 +14,7 @@ const ProfileAvatar: React.FC = () => {
             image.append('file', e.target.files[0]);
 
             console.log(image);
-            dispatch(updateUserAvatar(image));
+            // dispatch(updateUserAvatar(image));
         }
     };
 

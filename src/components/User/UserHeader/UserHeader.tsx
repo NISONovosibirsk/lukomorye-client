@@ -7,7 +7,7 @@ import styles from './UserHeader.module.scss';
 
 const Header: React.FC = () => {
     const { dropDown } = useAppSelector(state => state.statusReducer);
-    const { avatar } = useAppSelector(state => state.userReducer);
+    const { photo } = useAppSelector(state => state.userReducer);
     const { updateDropDown } = statusSlice.actions;
     const dispatch = useAppDispatch();
 
@@ -18,12 +18,10 @@ const Header: React.FC = () => {
     return (
         <div className={styles.header}>
             <div className={styles.controls}>
-                {/* <div className={styles.avatar} onClick={handleOpen}></div> */}
-                {/* <Image src={DefaultAvatar}/> */}
-                {avatar ? (
-                    <Image src={avatar} />
+                {photo ? (
+                    <Image src={photo} onClick={handleOpen}/>
                 ) : (
-                    <DefaultAvatar className={styles.avatar} />
+                    <DefaultAvatar className={styles.avatar} onClick={handleOpen}/>
                 )}
                 <DropDownIcon onClick={handleOpen} />
                 {dropDown && <DropDown />}

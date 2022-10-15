@@ -11,7 +11,6 @@ export interface UserState {
     type: string;
     photo: any;
     password: string;
-    avatar: string;
     passedTests: Array<{ name: string; points: number }>;
 }
 
