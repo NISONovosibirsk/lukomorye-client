@@ -5,16 +5,27 @@ import styles from './TeacherForm.module.scss';
 import { studentSlice } from '../../../store/reducers/studentReducer';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { v4 as uuidv4 } from 'uuid';
+import { statusSlice } from '../../../store/reducers/statusReducer';
 
 const TeacherForm: React.FC = () => {
     const { studentList, error } = useAppSelector(
         state => state.studentReducer
     );
+    const { updateModal } = statusSlice.actions;
     const { addStudent } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        console.log('data sending');
+        dispatch(updateModal(false));
+    };
+
     const handleAdd = () => {
-        !error && dispatch(addStudent({ name: '', grade: '1A', score: 0, id: uuidv4() }));
+        !error &&
+            dispatch(
+                addStudent({ name: '', grade: '1A', score: 0, id: uuidv4() })
+            );
     };
 
     return (
@@ -33,7 +44,7 @@ const TeacherForm: React.FC = () => {
                     <AddIcon />
                 </div>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <TransitionGroup className={styles.studentsForm}>
                     {studentList.map((student, index) => (
                         <CSSTransition

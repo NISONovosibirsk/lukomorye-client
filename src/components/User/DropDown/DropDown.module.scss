@@ -34,6 +34,11 @@
         }
     }
 
+    li.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
     h4 {
         color: #545454;
         place-self: center;
