@@ -54,7 +54,7 @@ const Profile = () => {
                 </div>
                 <TeacherData />
             </div>
-            <Modal onClose={handleClose} height={'80vh'} width={'60vw'}>
+            <Modal onClose={handleClose}>
                 <TeacherForm />
             </Modal>
         </div>
