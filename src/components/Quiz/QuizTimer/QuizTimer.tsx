@@ -42,10 +42,12 @@ const QuizTimer: React.FC = () => {
         const interval = setInterval(() => {
             dispatch(setTimeLeft(timer.timeLeft - 1));
         }, 1000);
+        console.log(totalTime)
         return () => clearInterval(interval);
     }, [timer.timeLeft]);
 
-    const percentage = Math.round(timer.timeLeft / 100)
+    const totalTime = useRef(timer.timeLeft);
+    const percentage = Math.round(timer.timeLeft / totalTime.current * 100);
 
     return (
         <div className={styles.timer}>
