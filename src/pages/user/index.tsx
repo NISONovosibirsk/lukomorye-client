@@ -1,4 +1,4 @@
-import { ReactElement, useEffect } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import type { NextPageWithLayout } from '../_app';
 import { QuizCard, UserLayout, Modal, QuizInfo } from '../../components';
 import styles from './index.module.scss';
@@ -10,15 +10,18 @@ import { studentSlice } from '../../store/reducers/studentReducer';
 
 const User: NextPageWithLayout = () => {
     const { updateModal } = statusSlice.actions;
-    const { updateQuizList } = quizSlice.actions;
-    const { quizList } = useAppSelector(state => state.quizReducer);
+    // const { updateQuizList } = quizSlice.actions;
+    // const { quizList } = useAppSelector(state => state.quizReducer);
     const dispatch = useAppDispatch();
+
+    const [quizList, setQuizList] = useState([]);
 
     useEffect(() => {
         const getData = async () => {
             try {
                 await axios.get('quizMock.json').then(response => {
-                    dispatch(updateQuizList(response.data.quizes));
+                    // dispatch(updateQuizList(response.data.quizes));
+                    setQuizList(response.data.quizes);
                 });
             } catch (error) {
                 console.log(error);

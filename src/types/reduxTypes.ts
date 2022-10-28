@@ -1,5 +1,5 @@
 import { Student } from './profileTypes';
-import { Quiz } from './quizTypes';
+import { Answer, Quiz } from './quizTypes';
 
 export interface UserState {
     name: string;
@@ -30,10 +30,18 @@ export interface UserAccount {
 export interface StatusState {
     dropDown: boolean;
     modal: boolean;
+    menu: boolean;
 }
 
 export interface QuizState {
-    quizList: Array<Quiz>;
-    quizTheme: string;
     quiz: Quiz;
+    activeCard: number;
+    results: {
+        answers: Array<Answer>
+    }
+    isFinished: boolean;
+    timer: {
+        timeLeft: number;
+        isCounting: boolean;
+    }
 }

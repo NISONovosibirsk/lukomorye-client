@@ -1,0 +1,25 @@
+.app {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70px auto;
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    // svg {
+    //     width: 50%;
+    // }
+}
+
+.verse {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}

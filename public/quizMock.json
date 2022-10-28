@@ -8,28 +8,18 @@
             "questions": [
                 {
                     "title": "В этой сказке много чудес. Её действующими лицами являются и звери. Вспомни.",
-                    "isActive": false,
                     "type": "options",
-                    "options": [
-                        { "title": "Ворон", "isCorrect": false },
-                        { "title": "Заяц", "isCorrect": true },
-                        { "title": "Волк", "isCorrect": false },
-                        { "title": "Медведь", "isCorrect": false }
-                    ]
+                    "options": ["Ворон", "Заяц", "Волк", "Медведь"],
+                    "correctAnswer": "Заяц"
                 },
                 {
                     "title": "Зачем злая мачеха отправила девочку в лес?",
-                    "isActive": false,
                     "type": "options",
-                    "options": [
-                        { "title": "За подарками", "isCorrect": false },
-                        { "title": "За дровами", "isCorrect": false },
-                        { "title": "За подснежниками", "isCorrect": true }
-                    ]
+                    "options": ["За подарками", "За дровами", "За подснежниками"],
+                    "correctAnswer": "За подснежниками"
                 },
                 {
                     "title": "Как звали самого молодого брата-месяца? Впиши ответ.",
-                    "isActive": false,
                     "type": "input",
                     "correctAnswer": "Март"
                 }

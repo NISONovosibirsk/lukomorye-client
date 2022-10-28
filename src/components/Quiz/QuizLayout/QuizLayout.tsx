@@ -1,5 +1,5 @@
 import styles from './QuizLayout.module.scss';
-import { UserHeader, UserFooter } from '../../';
+import { UserHeader, Footer } from '../../';
 
 interface Props {
     children: React.ReactNode;
@@ -9,10 +9,11 @@ const QuizLayout: React.FC<Props> = ({ children }) => {
     return (
         <section className={styles.quiz}>
             <UserHeader />
-            <div className={styles.content}>
+            {/* <div className={styles.content}>
                 {children}
-            </div>
-            <UserFooter />
+            </div> */}
+            {children}
+            <Footer />
         </section>
     );
 };

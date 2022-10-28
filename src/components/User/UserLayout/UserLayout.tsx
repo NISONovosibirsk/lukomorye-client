@@ -1,4 +1,4 @@
-import { UserFooter, UserHeader, UserSidebar } from '../..';
+import { Footer, UserHeader, UserSidebar } from '../..';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
 import styles from './Userlayout.module.scss';
@@ -23,7 +23,7 @@ const UserLayout: React.FC<Props> = ({ children }) => {
                 <UserSidebar />
                 <div className={styles.content}>{children}</div>
             </div>
-            <UserFooter />
+            <Footer />
         </section>
     );
 };

@@ -12,9 +12,10 @@ import {
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
 import { studentSlice } from '../../../store/reducers/studentReducer';
+import { NextPageWithLayout } from '../../_app';
 import styles from './profile.module.scss';
 
-const Profile = () => {
+const Profile: NextPageWithLayout = () => {
     const { name } = useAppSelector(state => state.userReducer);
     const { modal } = useAppSelector(state => state.statusReducer);
     const { isDirty } = useAppSelector(state => state.studentReducer);

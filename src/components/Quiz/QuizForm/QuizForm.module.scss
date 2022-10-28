@@ -1,0 +1,70 @@
+.quiz {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.quizForm {
+    height: 400px;
+    width: 600px;
+    background: #f1f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% auto auto 15%;
+    gap: 20px;
+    justify-items: center;
+    animation: fade-in 300ms forwards;
+}
+
+.image {
+    height: 400px;
+    width: 600px;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    animation: image 600ms forwards;
+
+    img {
+        object-fit: contain;
+    }
+}
+
+.radio {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.input {
+    align-self: end;
+    width: 100%;
+    height: 40px;
+}
+
+.question {
+    background: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes image {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

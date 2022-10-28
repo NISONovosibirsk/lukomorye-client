@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, auto);
+    padding: {
+        top: 2vh;
+    }
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vh;
+}
+
+.name {
+    color: #067638;
+    text-transform: uppercase;
+}
+
+.theme {
+    font-weight: 400;
+}

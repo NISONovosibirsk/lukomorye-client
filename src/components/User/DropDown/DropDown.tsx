@@ -5,7 +5,6 @@ import styles from './DropDown.module.scss';
 
 const DropDown: React.FC = () => {
     const { pathname } = useRouter();
-    console.log(pathname);
 
     return (
         <ul className={styles.dropDown}>

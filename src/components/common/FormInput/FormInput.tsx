@@ -24,7 +24,7 @@ const FormInput: React.FC<Props> = ({
     validations,
     defaultValue,
     type,
-    isDisabled
+    isDisabled,
 }) => {
     const {
         field,
@@ -32,7 +32,14 @@ const FormInput: React.FC<Props> = ({
     } = useController({ name, rules: validations, defaultValue });
 
     return (
-        <div className={styles.inputWrapper}>
+        <div
+            className={styles.inputWrapper}
+            style={{
+                width: `${width}`,
+                height: `${height}`,
+                fontSize: `${fontSize}`,
+            }}
+        >
             <input
                 disabled={isDisabled}
                 className={`${styles.input}  ${isScore && styles.score} ${
@@ -40,8 +47,8 @@ const FormInput: React.FC<Props> = ({
                 }`}
                 type={type}
                 style={{
-                    width: `${width}`,
-                    height: `${height}`,
+                    // width: `${width}`,
+                    // height: `${height}`,
                     fontSize: `${fontSize}`,
                 }}
                 placeholder={placeholder}

@@ -6,15 +6,27 @@ interface Props {
     title: string;
     name: string;
     value: string;
+    validations: any;
 }
 
-const RadioButton: React.FC<Props> = ({ checked, title, name, value }) => {
-    const {field, fieldState} = useController({ name});
+const RadioButton: React.FC<Props> = ({
+    checked,
+    title,
+    name,
+    value,
+    validations,
+}) => {
+    const { field, fieldState } = useController({ name, rules: validations });
 
     return (
         <label className={styles.wrapper}>
             {title}
-            <input type='radio' defaultChecked={checked} {...field} value={value}/>
+            <input
+                type='radio'
+                defaultChecked={checked}
+                {...field}
+                value={value}
+            />
             <span className={styles.checkmark}></span>
         </label>
     );
