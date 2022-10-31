@@ -1,3 +1,4 @@
+import ReactConfetti from 'react-confetti';
 import {
     CatFireworkIcon,
     RightIcon,
@@ -11,8 +12,9 @@ import styles from './QuizFinal.module.scss';
 const QuizFinal: React.FC = () => {
     return (
         <section className={styles.container}>
+            <ReactConfetti recycle={false} numberOfPieces={800}/>
             <div className={styles.catWrapper}>
-                <CatFireworkIcon />
+                <CatFireworkIcon className={styles.cat}/>
                 <div className={styles.resultsWrapper}>
                     <p className={styles.congratulate}>ПОЗДРАВЛЯЮ</p>
                     <p className={styles.result}>ТВОЙ РЕЗУЛЬТАТ</p>
