@@ -14,14 +14,12 @@
     will-change: transform;
     position: absolute;
     top: 0;
-    left: 40px;
-    left: 0;
+    left: 100px;
 }
 
 .earth {
     will-change: transform;
     width: 50%;
-    height: 50%;
     object-fit: contain;
     margin: 0 auto;
 }
@@ -30,7 +28,7 @@
     will-change: transform;
     position: absolute;
     bottom: 0;
-    right: 20px;
+    right: 40px;
 }
 
 .verse {

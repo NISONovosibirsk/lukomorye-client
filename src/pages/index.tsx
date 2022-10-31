@@ -26,16 +26,16 @@ const Main: NextPageWithLayout = () => {
                 <SunImage
                     className={styles.sun}
                     style={{
-                        transform: `translate(${cursor.x / 55}px, ${
-                            cursor.y / 55
+                        transform: `translate(-${cursor.x / 80}px, ${
+                            cursor.y / 70
                         }px)`,
                     }}
                 />
                 <div
                     className={styles.earth}
                     style={{
-                        transform: `translate(${cursor.x / 80}px, ${
-                            cursor.y / 80
+                        transform: `translate(${cursor.x / 100}px, ${
+                            cursor.y / 70
                         }px)`,
                     }}
                 >
@@ -44,8 +44,8 @@ const Main: NextPageWithLayout = () => {
                 <MoonImage
                     className={styles.moon}
                     style={{
-                        transform: `translate(${cursor.x / 60}px, ${
-                            cursor.y / 60
+                        transform: `translate(${cursor.x / 90}px, -${
+                            cursor.y / 80
                         }px)`,
                     }}
                 />
