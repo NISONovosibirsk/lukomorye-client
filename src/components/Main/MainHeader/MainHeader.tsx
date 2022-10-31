@@ -16,30 +16,10 @@ const MainHeader: React.FC = () => {
 
     return (
         <header className={styles.header}>
-            <div className={styles.menu}>
-                <div
-                    className={`${styles.button} ${menu && styles.active}`}
-                    onClick={handleMenu}
-                ></div>
-                    <CSSTransition timeout={200} classNames={{
-                        exitActive: styles.exitActive,
-                        enterActive: styles.enterActive,
-                    }} in={menu} mountOnEnter unmountOnExit>
-                        <ul className={styles.bar}>
-                            <Link href={'/'}>О нас</Link>
-                            <Link href={'/'}>
-                                Игра-конкурс «Золотой ключик» для 1-4 классов
-                            </Link>
-                            <Link href={'/'}>
-                                Игра-конкурс «Лестница успеха» для 5-11 классов
-                            </Link>
-                            <Link href={'/'}>
-                                Игра-конкурс «Лукоморье» для 1-11 классов
-                            </Link>
-                            <Link href={'/'}>Контакты</Link>
-                        </ul>
-                    </CSSTransition>
-            </div>
+            <div
+                className={`${styles.button} ${menu && styles.active}`}
+                onClick={handleMenu}
+            ></div>
             <div className={styles.rightBlock}>
                 <Link href={'/sign_in'}>Вход</Link>
                 <div className={styles.phone}>
@@ -47,6 +27,30 @@ const MainHeader: React.FC = () => {
                     <p>(383) 35 12 75</p>
                 </div>
             </div>
+            <CSSTransition
+                timeout={200}
+                classNames={{
+                    exitActive: styles.exitActive,
+                    enterActive: styles.enterActive,
+                }}
+                in={menu}
+                mountOnEnter
+                unmountOnExit
+            >
+                <ul className={styles.bar}>
+                    <Link href={'/'}>О нас</Link>
+                    <Link href={'/'}>
+                        Игра-конкурс «Золотой ключик» для 1-4 классов
+                    </Link>
+                    <Link href={'/'}>
+                        Игра-конкурс «Лестница успеха» для 5-11 классов
+                    </Link>
+                    <Link href={'/'}>
+                        Игра-конкурс «Лукоморье» для 1-11 классов
+                    </Link>
+                    <Link href={'/'}>Контакты</Link>
+                </ul>
+            </CSSTransition>
         </header>
     );
 };

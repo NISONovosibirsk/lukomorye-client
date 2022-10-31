@@ -16,15 +16,23 @@
 }
 
 .bar {
-    background: #f5f5f5;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 8vh;
+    left: 3vw;
     gap: 15px;
+    z-index: 1;
+    background: rgba(245, 245, 245, 0.7);
+    backdrop-filter: blur(6px);
+    width: 250px;
 
     a {
+        font-size: 1.2em;
         &:hover {
-            color: black;
+            color: #468532;
         }
     }
 }
@@ -37,16 +45,19 @@
     cursor: pointer;
     transition: all 200ms ease;
     user-select: none;
+    animation: pulse 2000ms infinite;
 
     &:hover {
         background: #3ec513;
-        box-shadow: 0px 0px 10px 10px #24ab18;
+        box-shadow: 0px 0px 7px 7px #29c21b;
+        animation: none;
     }
 }
 
 .active {
     background: #3ec513;
-    box-shadow: 0px 0px 10px 10px #24ab18;
+    box-shadow: 0px 0px 7px 7px #29c21b;
+    animation: none;
 }
 
 .rightBlock {
@@ -87,5 +98,18 @@
     to {
         transform: translateX(-100px);
         opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 0.8;
+    }
+
+    100% {
+        scale: 1;
     }
 }
