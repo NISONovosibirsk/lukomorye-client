@@ -40,6 +40,15 @@ const Main: NextPageWithLayout = () => {
                     }}
                 >
                     <EarthImage />
+                    <Link href={'google.com'}>
+                        <a className={styles.lukomorye}></a>
+                    </Link>
+                    <Link href={'google.com'}>
+                        <a className={styles.zolotoy}></a>
+                    </Link>
+                    <Link href={'google.com'}>
+                        <a className={styles.lestnica}></a>
+                    </Link>
                 </div>
                 <MoonImage
                     className={styles.moon}
