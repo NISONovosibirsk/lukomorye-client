@@ -1,3 +1,40 @@
 .footer {
-    background: #E7E7E7;
+    background: #e7e7e7;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 33%);
+    justify-items: center;
+    align-items: center;
+    padding: {
+        top: 10px;
+        bottom: 10px;
+    };
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+        font-weight: 400;
+
+        &:hover {
+            text-decoration: underline;
+            color: #468532;
+        }
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
 }
