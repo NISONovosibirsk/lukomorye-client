@@ -30,6 +30,9 @@ export { default as VerseLogo } from './images/main-page/verse-image.svg';
 export { default as EarthImage } from './images/main-page/earth-image.svg';
 export { default as SunImage } from './images/main-page/sun-image.svg';
 export { default as MoonImage } from './images/main-page/moon-image.svg';
+export { default as LukmoryeTable } from './icons/mainPageIcons/lukomorye-table.svg';
+export { default as LestnicaTable } from './icons/mainPageIcons/lestnica-table.svg';
+export { default as ZolotoyTable } from './icons/mainPageIcons/zolotoy-table.svg';
 
 // COMMON //
 export { default as PhoneIcon } from './icons/commonIcons/phone-icon.svg';

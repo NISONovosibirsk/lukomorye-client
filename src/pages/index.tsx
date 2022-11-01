@@ -6,6 +6,9 @@ import {
     EarthImage,
     MoonImage,
     SunImage,
+    LukmoryeTable,
+    ZolotoyTable,
+    LestnicaTable,
 } from '../assets';
 import { MainHeader, MainLayout } from '../components';
 import useCursor from '../hooks/useCursor';
@@ -40,7 +43,7 @@ const Main: NextPageWithLayout = () => {
                     }}
                 >
                     <EarthImage />
-                    <Link href={'google.com'}>
+                    {/* <Link href={'google.com'}>
                         <a className={styles.lukomorye}></a>
                     </Link>
                     <Link href={'google.com'}>
@@ -48,6 +51,15 @@ const Main: NextPageWithLayout = () => {
                     </Link>
                     <Link href={'google.com'}>
                         <a className={styles.lestnica}></a>
+                    </Link> */}
+                    <Link href={'google.com'}>
+                        <LukmoryeTable className={styles.lukomorye} />
+                    </Link>
+                    <Link href={'google.com'}>
+                        <ZolotoyTable className={styles.zolotoy} />
+                    </Link>
+                    <Link href={'google.com'}>
+                        <LestnicaTable className={styles.lestnica} />
                     </Link>
                 </div>
                 <MoonImage
