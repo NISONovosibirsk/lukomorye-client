@@ -1,8 +1,8 @@
 .user {
-    height: 108vh;
+    height: calc(100vh + 130px);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 8vh auto 8vh;
+    grid-template-rows: 80px auto 130px;
     grid-template-areas: 
         'userHeader'
         'userBody'
