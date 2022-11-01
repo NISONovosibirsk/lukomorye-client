@@ -11,15 +11,24 @@ import {
     LestnicaTable,
 } from '../assets';
 import { MainHeader, MainLayout } from '../components';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import useCursor from '../hooks/useCursor';
+import { statusSlice } from '../store/reducers/statusReducer';
 import styles from './main.module.scss';
 import { NextPageWithLayout } from './_app';
 
 const Main: NextPageWithLayout = () => {
     const cursor = useCursor();
+    const { menu } = useAppSelector(state => state.statusReducer);
+    const { updateMenu } = statusSlice.actions;
+    const dispatch = useAppDispatch();
+
+    const handleClose = () => {
+        menu && dispatch(updateMenu(false));
+    };
 
     return (
-        <div className={styles.app}>
+        <div className={styles.app} onClick={handleClose}>
             <MainHeader />
             <div className={styles.content}>
                 <div className={styles.verse}>
@@ -43,15 +52,6 @@ const Main: NextPageWithLayout = () => {
                     }}
                 >
                     <EarthImage />
-                    {/* <Link href={'google.com'}>
-                        <a className={styles.lukomorye}></a>
-                    </Link>
-                    <Link href={'google.com'}>
-                        <a className={styles.zolotoy}></a>
-                    </Link>
-                    <Link href={'google.com'}>
-                        <a className={styles.lestnica}></a>
-                    </Link> */}
                     <Link href={'google.com'}>
                         <LukmoryeTable className={styles.lukomorye} />
                     </Link>
@@ -70,6 +70,10 @@ const Main: NextPageWithLayout = () => {
                         }px)`,
                     }}
                 />
+                <p className={styles.caption}>
+                    Организатор проектов – Центр образовательных технологий
+                    «Лукоморье»
+                </p>
             </div>
         </div>
     );
