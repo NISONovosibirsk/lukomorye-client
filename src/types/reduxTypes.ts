@@ -37,11 +37,12 @@ export interface QuizState {
     quiz: Quiz;
     activeCard: number;
     results: {
-        answers: Array<Answer>
-    }
+        answers: Array<Answer>;
+        score: number;
+    };
     isFinished: boolean;
     timer: {
         timeLeft: number;
         isCounting: boolean;
-    }
+    };
 }

@@ -12,6 +12,7 @@ const initialState: QuizState = {
     },
     results: {
         answers: [],
+        score: 0,
     },
     isFinished: false,
     activeCard: 0,
