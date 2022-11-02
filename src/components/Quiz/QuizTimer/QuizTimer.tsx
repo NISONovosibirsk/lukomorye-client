@@ -3,6 +3,7 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { quizSlice } from '../../../store/reducers/quizReducer';
+import { getPadTime } from '../../../utils/getPadTime';
 import styles from './QuizTimer.module.scss';
 
 const QuizTimer: React.FC = () => {
@@ -13,10 +14,12 @@ const QuizTimer: React.FC = () => {
     const progressbar = {
         textColor: '#ED771C',
         pathColor: '#ED771C',
+        textSize: '18px',
     };
 
     const totalTime = useRef(timer.timeLeft);
     const percentage = Math.round((timer.timeLeft / totalTime.current) * 100);
+    const minutes = getPadTime(Math.floor(timer.timeLeft / 60));
 
     const timerTick = () => {
         timer.timeLeft > 0 && dispatch(setTimeLeft(1));
@@ -34,8 +37,9 @@ const QuizTimer: React.FC = () => {
         <div className={styles.timer}>
             <CircularProgressbar
                 value={percentage}
-                text={'40 минут'}
+                text={`${minutes} минут`}
                 styles={buildStyles(progressbar)}
+                strokeWidth={5}
             />
         </div>
     );
