@@ -1,10 +1,18 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { RadioButton, FormInput, Button } from '../../';
 import styles from './QuizForm.module.scss';
-import { FlatLogo } from '../../../assets';
+import {
+    CatImage01,
+    CatImage02,
+    CatImage03,
+    CatImage04,
+    CatImage05,
+    FlatLogo,
+} from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { quizSlice } from '../../../store/reducers/quizReducer';
 import { Question } from '../../../types/quizTypes';
+import { getRandomObject } from '../../../utils/getRandomObject';
 
 interface Props {
     question: Question;
@@ -16,15 +24,36 @@ const QuizForm: React.FC<Props> = ({ question }) => {
     });
 
     const dispatch = useAppDispatch();
-    const { updateActive, setAnswer, setFinished } = quizSlice.actions;
+    const { updateActive, setAnswer, setFinished, setScore } =
+        quizSlice.actions;
     const { activeCard, quiz } = useAppSelector(state => state.quizReducer);
+
+    const format = (text: string | number) => {
+        return text.toString().toLowerCase().trim();
+    };
+
+    const catImages = [
+        <CatImage01 />,
+        <CatImage02 />,
+        <CatImage03 />,
+        <CatImage04 />,
+        <CatImage05 />,
+    ];
 
     const onSubmit = (data: any) => {
         const newState = {
             answer: data.answer,
-            status: data.answer === question.correctAnswer ? 'right' : 'wrong',
+            status:
+                format(data.answer) === format(question.correctAnswer)
+                    ? 'right'
+                    : 'wrong',
         };
         dispatch(setAnswer({ index: activeCard, answer: newState }));
+        if (newState.status === 'right') {
+            question.score
+                ? dispatch(setScore(question.score))
+                : dispatch(setScore(quiz.defaultScore));
+        }
         activeCard + 1 >= quiz.questions.length
             ? dispatch(setFinished(true))
             : dispatch(updateActive(activeCard + 1));
@@ -37,7 +66,11 @@ const QuizForm: React.FC<Props> = ({ question }) => {
     return (
         <div className={styles.quiz}>
             <div className={styles.image}>
-                {question.image ? <img src={question.image} /> : <FlatLogo />}
+                {question.image ? (
+                    <img src={question.image} />
+                ) : (
+                    getRandomObject(catImages)
+                )}
             </div>
             <FormProvider {...methods}>
                 <form

@@ -15,17 +15,13 @@ const QuizTimer: React.FC = () => {
     const progressbar = {
         textColor: '#ED771C',
         pathColor: '#ED771C',
-        textSize: '16px',
+        textSize: '32px',
     };
 
     const totalTime = useRef(timer.timeLeft);
     const percentage = Math.round((timer.timeLeft / totalTime.current) * 100);
     const minutes = getPadTime(Math.floor(timer.timeLeft / 60));
-    const text = getDeclination(Math.floor(timer.timeLeft / 60), [
-        'минута',
-        'минуты',
-        'минут',
-    ]);
+    const seconds = getPadTime(Math.floor(timer.timeLeft % 60));
 
     const timerTick = () => {
         timer.timeLeft > 0 && dispatch(setTimeLeft(1));
@@ -40,15 +36,15 @@ const QuizTimer: React.FC = () => {
             timer.isCounting && timerTick();
         }, 1000);
         return () => clearInterval(interval);
-    }, [timer.timeLeft, timer.isCounting]);
+    }, [timer.isCounting]);
 
     return (
         <div className={styles.timer}>
             <CircularProgressbar
                 value={percentage}
-                text={`${minutes} ${text}`}
+                text={`${minutes}:${seconds}`}
                 styles={buildStyles(progressbar)}
-                strokeWidth={5}
+                strokeWidth={4}
             />
         </div>
     );

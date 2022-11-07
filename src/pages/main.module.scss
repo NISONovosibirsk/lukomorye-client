@@ -15,7 +15,18 @@
     position: absolute;
     top: 0;
     left: 100px;
-    width: 15%;
+    width: 12%;
+}
+
+.background {
+    will-change: transform;
+    width: 55vw;
+    height: 55vw;
+    position: absolute;
+    top: 0;
+    bottom: 20%;
+    left: 25%;
+    margin: auto 0;
 }
 
 .earth {
@@ -83,6 +94,7 @@
     flex-direction: column;
     gap: 10px;
     width: 24vw;
+    z-index: 1;
 }
 
 .caption {

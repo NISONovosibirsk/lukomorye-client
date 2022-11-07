@@ -5,15 +5,26 @@ import {
     StarIcon,
     WrongIcon,
 } from '../../../assets';
-import { useAppSelector } from '../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { statusSlice } from '../../../store/reducers/statusReducer';
 import { getDeclination } from '../../../utils/getDeclination';
-import Button from '../../common/Button/Button';
-import QuizProgress from '../QuizProgress/QuizProgress';
+import { Button, Modal, QuizProgress, QuizStatistics } from '../../';
 import styles from './QuizFinal.module.scss';
 
 const QuizFinal: React.FC = () => {
     const { results } = useAppSelector(state => state.quizReducer);
+    const { modal } = useAppSelector(state => state.statusReducer);
+    const { updateModal } = statusSlice.actions;
+    const dispatch = useAppDispatch();
     const text = getDeclination(results.score, ['БАЛЛ', 'БАЛЛА', 'БАЛЛОВ']);
+
+    const handleClose = () => {
+        dispatch(updateModal(false));
+    };
+
+    const handleModal = () => {
+        dispatch(updateModal(true));
+    };
 
     return (
         <section className={styles.container}>
@@ -41,7 +52,14 @@ const QuizFinal: React.FC = () => {
                 </div>
             </div>
             <QuizProgress />
-            <Button title={'Посмотреть неправильные ответы'} width={'25%'} />
+            <Button
+                title={'Посмотреть неправильные ответы'}
+                width={'25%'}
+                onClick={handleModal}
+            />
+            <Modal onClose={handleClose}>
+                <QuizStatistics />
+            </Modal>
         </section>
     );
 };

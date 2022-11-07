@@ -1,0 +1,53 @@
+.container {
+    width: 65vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 5% auto;
+    overflow-y: auto;
+}
+
+.header {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 55% repeat(2, 20%);
+    gap: 10px;
+
+    h4 {
+        font-weight: 700;
+        justify-self: start;
+        color: #545454;
+    }
+}
+
+.statistics {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 55% repeat(2, 20%);
+    gap: 10px;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.correctAnswer {
+    margin: 0 auto;
+    align-self: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #067638;
+}
+
+.studentAnswer {
+    gap: 5px;
+    margin: 0 auto;
+    align-self: center;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}

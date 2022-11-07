@@ -25,6 +25,8 @@ export { default as QuizForm } from './Quiz/QuizForm/QuizForm';
 export { default as QuizProgress } from './Quiz/QuizProgress/QuizProgress';
 export { default as QuizFinal } from './Quiz/QuizFinal/QuizFinal';
 export { default as QuizTimer } from './Quiz/QuizTimer/QuizTimer';
+export { default as QuizStatistics } from './Quiz/QuizStatistics/QuizStatistics';
+export { default as StatisticsItem } from './Quiz/StatisticsItem/StatisticsItem';
 
 // COMMON //
 export { default as Button } from './common/Button/Button';

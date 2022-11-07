@@ -9,6 +9,7 @@ import {
     LukmoryeTable,
     ZolotoyTable,
     LestnicaTable,
+    ParallaxBackground,
 } from '../assets';
 import { MainHeader, MainLayout } from '../components';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
@@ -40,6 +41,14 @@ const Main: NextPageWithLayout = () => {
                     style={{
                         transform: `translate(-${cursor.x / 80}px, ${
                             cursor.y / 70
+                        }px)`,
+                    }}
+                />
+                <ParallaxBackground
+                    className={styles.background}
+                    style={{
+                        transform: `translate(-${cursor.x / 120}px, -${
+                            cursor.y / 80
                         }px)`,
                     }}
                 />

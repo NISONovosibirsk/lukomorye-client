@@ -8,6 +8,7 @@ const initialState: QuizState = {
         id: '',
         terms: '',
         theme: '',
+        defaultScore: 0,
         questions: [],
     },
     results: {
@@ -52,6 +53,9 @@ export const quizSlice = createSlice({
         },
         setIsCounting(state, action: PayloadAction<boolean>) {
             state.timer.isCounting = action.payload;
+        },
+        setScore(state, action: PayloadAction<number>) {
+            state.results.score = state.results.score + action.payload;
         },
     },
 });

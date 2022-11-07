@@ -3,6 +3,7 @@ import { ColorsIcon } from '../../../assets';
 import { useAppDispatch } from '../../../hooks/redux';
 import { quizSlice } from '../../../store/reducers/quizReducer';
 import { statusSlice } from '../../../store/reducers/statusReducer';
+import { getRandomObject } from '../../../utils/getRandomObject';
 import Button from '../../common/Button/Button';
 import styles from './QuizCard.module.scss';
 
@@ -13,7 +14,6 @@ interface Props {
 const QuizCard: React.FC<Props> = ({ quiz }) => {
     const dispatch = useAppDispatch();
     const { updateModal } = statusSlice.actions;
-    const { updateQuizTheme } = quizSlice.actions;
 
     const colors: Array<string> = [
         '#43B05C',
@@ -29,20 +29,14 @@ const QuizCard: React.FC<Props> = ({ quiz }) => {
         '#A66CFF',
     ];
 
-    const handleColors: () => string = () => {
-        let randomValue = Math.floor(Math.random() * colors.length);
-        return colors[randomValue];
-    };
-
     const handleStart = () => {
-        dispatch(updateQuizTheme(quiz.theme));
         dispatch(updateModal(true));
     };
 
     return (
         <li className={styles.card}>
             <div className={styles.header}>
-                <p style={{ color: `${handleColors()}` }}>{quiz.name}</p>
+                <p style={{ color: `${getRandomObject(colors)}` }}>{quiz.name}</p>
                 <ColorsIcon />
             </div>
             <p className={styles.theme}>{quiz.theme}</p>
