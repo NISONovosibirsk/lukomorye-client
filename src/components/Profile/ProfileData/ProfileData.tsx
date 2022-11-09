@@ -29,7 +29,7 @@ const ProfileData: React.FC = () => {
     };
 
     return (
-        <ProfileFormWrapper width='500px' height='410px'>
+        <ProfileFormWrapper>
             <h4>Профиль</h4>
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>

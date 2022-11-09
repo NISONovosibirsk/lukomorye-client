@@ -47,7 +47,7 @@ const AccountData: React.FC = () => {
     };
 
     return (
-        <ProfileFormWrapper width='500px' height='410px'>
+        <ProfileFormWrapper>
             <h4>Логин / Пароль</h4>
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>

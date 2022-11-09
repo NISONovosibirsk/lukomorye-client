@@ -1,9 +1,13 @@
 .student {
     display: grid;
     grid-template-columns: 55% 20% auto auto;
-    column-gap: 2vh;
+    gap: 15px;
     scale: 1;
     transition: scale 0.5s ease;
+    padding: {
+        left: 5px;
+        right: 5px;
+    };
 }
 
 .remove {

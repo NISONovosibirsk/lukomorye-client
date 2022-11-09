@@ -1,6 +1,10 @@
 .profile {
     display: grid;
-    row-gap: 2.5vh;
+    gap: 15px;
+    padding: {
+        left: 20px;
+        right: 20px;
+    };
 
     h2 {
         color: #545454;
@@ -31,5 +35,5 @@
 .generalForms {
     display: flex;
     flex-direction: row;
-    gap: 2vw;
+    gap: 20px;
 }
