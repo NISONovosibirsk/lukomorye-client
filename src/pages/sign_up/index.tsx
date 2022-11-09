@@ -10,7 +10,7 @@ const SignUp: NextPageWithLayout = () => {
             <div className={styles.signUp}>
                 <SignUpForm />
             </div>
-            <FullLogo />
+            <FullLogo className={styles.logo}/>
         </div>
     );
 };

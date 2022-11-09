@@ -1,16 +1,17 @@
 .form {
     background: #f1f0f0;
-    width: 60%;
+    width: 500px;
+    height: 300px;
     border-radius: 8px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto 4.5vh auto;
-    gap: 2.5vh;
+    gap: 20px;
     padding: {
-        top: 1.5vh;
-        left: 6%;
-        right: 6%;
-        bottom: 2vh;
+        top: 15px;
+        bottom: 15px;
+        left: 20px;
+        right: 20px;
     }
     animation: fade-in 300ms forwards;
 
@@ -25,6 +26,13 @@
     p {
         color: #545454;
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .form {
+        width: 400px;
+        height: 300px;
     }
 }
 

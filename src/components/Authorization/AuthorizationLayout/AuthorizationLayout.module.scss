@@ -1,9 +1,7 @@
 .authorization {
-    height: 108vh;
+    height: calc(100vh + 130px);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto 8vh;
-    grid-template-areas: 
-        'authContent'
-        'UserFooter';
+    grid-template-rows: auto 130px;
+    gap: 10px;
 }

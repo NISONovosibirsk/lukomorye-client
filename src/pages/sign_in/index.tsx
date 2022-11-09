@@ -14,7 +14,7 @@ const SignIn: NextPageWithLayout = () => {
                 </p>
                 <SignInForm />
             </div>
-            <FullLogo />
+            <FullLogo className={styles.logo}/>
         </div>
     );
 };
