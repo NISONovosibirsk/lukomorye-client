@@ -69,7 +69,8 @@ const QuizForm: React.FC<Props> = ({ question }) => {
                 {question.image ? (
                     <img src={question.image} />
                 ) : (
-                    getRandomObject(catImages)
+                    // getRandomObject(catImages)
+                    <FlatLogo />
                 )}
             </div>
             <FormProvider {...methods}>

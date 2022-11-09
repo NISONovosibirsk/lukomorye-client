@@ -54,7 +54,7 @@ const QuizFinal: React.FC = () => {
             <QuizProgress />
             <Button
                 title={'Посмотреть неправильные ответы'}
-                width={'25%'}
+                width={'350px'}
                 onClick={handleModal}
             />
             <Modal onClose={handleClose}>
