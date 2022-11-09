@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 80px auto 130px;
-    grid-template-areas: 
+    grid-template-areas:
         'userHeader'
         'userBody'
         'userFooter';
@@ -11,17 +11,17 @@
 
 .body {
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: 300px auto;
     grid-template-rows: 1fr;
-    grid-template-areas: 
-        'sidebar content';
+    grid-template-areas: 'sidebar content';
 }
 
 .content {
-    padding: {
-        top: 2.5vh;
-        bottom: 3vh;
-        left: 3vw;
-        right: 1.5vw;
-    };
+    padding: 20px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .body {
+        grid-template-columns: 270px auto;
+    }
 }

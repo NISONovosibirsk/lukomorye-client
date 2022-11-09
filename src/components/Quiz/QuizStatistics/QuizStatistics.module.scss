@@ -43,11 +43,15 @@
 
 .studentAnswer {
     gap: 5px;
-    margin: 0 auto;
     align-self: center;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: auto auto;
+    grid-template-columns: 22px auto;
     word-wrap: break-word;
     word-break: break-all;
+    width: 100%;
+
+    p {
+        place-self: center;
+    }
 }

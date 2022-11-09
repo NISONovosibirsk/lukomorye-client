@@ -1,30 +1,33 @@
 .sidebarItem {
     display: flex;
     flex-direction: column;
-    row-gap: 1vh;
+    gap: 15px;
+    width: 100%;
 }
 
 .results {
     display: flex;
-    column-gap: 2vw;
+    column-gap: 15px;
+    width: 100%;
 }
 
 .info {
     display: flex;
-    column-gap: 0.5vw;
+    gap: 10px;
 }
 
 .score {
     display: flex;
     font-weight: 700;
     color: #545454;
-    column-gap: 0.5vw;
+    gap: 5px;
 }
 
 .points {
     color: #E5C100;
 
     fill: #E5C100;
+
 }
 
 .orange {
@@ -35,12 +38,9 @@
 
 .certificates {
     display: flex;
-    column-gap: 0.5vw;
+    gap: 10px;
     font-weight: 700;
     color: #545454;
-    svg {
-        height: 100%;
-    }
 }
 
 .name {
