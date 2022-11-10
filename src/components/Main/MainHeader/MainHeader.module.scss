@@ -45,18 +45,18 @@
     cursor: pointer;
     transition: all 200ms ease;
     user-select: none;
-    animation: pulse 2000ms infinite;
+    animation: pulse 4000ms infinite;
 
     &:hover {
         background: #3ec513;
-        box-shadow: 0px 0px 7px 7px #29c21b;
+        box-shadow: 0px 0px 3px 3px #29c21b;
         animation: none;
     }
 }
 
 .active {
     background: #3ec513;
-    box-shadow: 0px 0px 7px 7px #29c21b;
+    box-shadow: 0px 0px 3px 3px #29c21b;
     animation: none;
 }
 
@@ -103,13 +103,13 @@
 
 @keyframes pulse {
     0% {
-        scale: 1;
+        background: #3ec513;
     }
     50% {
-        scale: 0.8;
+        background: #3ec513;
+        box-shadow: 0px 0px 3px 3px #29c21b;
     }
-
     100% {
-        scale: 1;
+        background: #3ec513;
     }
 }
