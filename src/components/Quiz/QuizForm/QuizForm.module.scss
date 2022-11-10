@@ -24,7 +24,7 @@
     justify-self: center;
     display: flex;
     justify-content: center;
-    animation: image 600ms forwards;
+    animation: image 300ms forwards;
 
     img {
         object-fit: contain;
@@ -42,6 +42,7 @@
 }
 
 .question {
+    font-size: 18px;
     background: #ffffff;
     border-radius: 8px;
     width: 100%;
@@ -61,7 +62,7 @@
 @keyframes fade-in {
     from {
         opacity: 0;
-        transform: translateX(-200px);
+        transform: translateX(200px);
     }
     to {
         transform: translateX(0);
@@ -72,8 +73,10 @@
 @keyframes image {
     from {
         opacity: 0;
+        transform: translateX(-200px);
     }
     to {
         opacity: 1;
+        transform: translateX(0);
     }
 }

@@ -18,10 +18,8 @@ import styles from './profile.module.scss';
 const Profile: NextPageWithLayout = () => {
     const { name } = useAppSelector(state => state.userReducer);
     const { modal } = useAppSelector(state => state.statusReducer);
-    const { isDirty } = useAppSelector(state => state.studentReducer);
     const { updateModal } = statusSlice.actions;
     const { updateStudentList, resetForm } = studentSlice.actions;
-    // const { setIsDirty } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
     useEffect(() => {

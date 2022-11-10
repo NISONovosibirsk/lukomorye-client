@@ -41,8 +41,4 @@ export interface QuizState {
         score: number;
     };
     isFinished: boolean;
-    timer: {
-        timeLeft: number;
-        isCounting: boolean;
-    };
 }

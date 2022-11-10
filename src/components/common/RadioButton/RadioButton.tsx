@@ -7,6 +7,7 @@ interface Props {
     name: string;
     value: string;
     validations: any;
+    fontSize?: string;
 }
 
 const RadioButton: React.FC<Props> = ({
@@ -15,11 +16,12 @@ const RadioButton: React.FC<Props> = ({
     name,
     value,
     validations,
+    fontSize,
 }) => {
     const { field, fieldState } = useController({ name, rules: validations });
 
     return (
-        <label className={styles.wrapper}>
+        <label className={styles.wrapper} style={{ fontSize: `${fontSize}` }}>
             {title}
             <input
                 type='radio'

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
@@ -7,10 +7,13 @@ import { getDeclination } from '../../../utils/getDeclination';
 import { getPadTime } from '../../../utils/getPadTime';
 import styles from './QuizTimer.module.scss';
 
-const QuizTimer: React.FC = () => {
-    const { timer } = useAppSelector(state => state.quizReducer);
+interface Props {
+    seconds: number;
+}
+
+const QuizTimer: React.FC<Props> = ({ seconds }) => {
     const dispatch = useAppDispatch();
-    const { setTimeLeft, setIsCounting, setFinished } = quizSlice.actions;
+    const { setFinished } = quizSlice.actions;
 
     const progressbar = {
         textColor: '#ED771C',
@@ -18,31 +21,31 @@ const QuizTimer: React.FC = () => {
         textSize: '32px',
     };
 
-    const totalTime = useRef(timer.timeLeft);
-    const percentage = Math.round((timer.timeLeft / totalTime.current) * 100);
-    const minutes = getPadTime(Math.floor(timer.timeLeft / 60));
-    const seconds = getPadTime(Math.floor(timer.timeLeft % 60));
+    const [timeLeft, setTimeLeft] = useState(seconds);
+    const [isCounting, setIsCounting] = useState(true);
 
-    const timerTick = () => {
-        timer.timeLeft > 0 && dispatch(setTimeLeft(1));
-        if (timer.timeLeft === 0) {
-            dispatch(setIsCounting(false));
-            dispatch(setFinished(true));
-        }
-    };
+    const totalTime = useRef(timeLeft);
+    const percentage = Math.round((timeLeft / totalTime.current) * 100);
+    const padMinutes = getPadTime(Math.floor(timeLeft / 60));
+    const padSeconds = getPadTime(Math.floor(timeLeft % 60));
 
     useEffect(() => {
         const interval = setInterval(() => {
-            timer.isCounting && timerTick();
+            isCounting &&
+                setTimeLeft(timeLeft => (timeLeft === 0 ? 0 : timeLeft - 1));
         }, 1000);
+        if (timeLeft === 0) {
+            setIsCounting(false);
+            dispatch(setFinished(true));
+        }
         return () => clearInterval(interval);
-    }, [timer.isCounting]);
+    }, [isCounting, timeLeft]);
 
     return (
         <div className={styles.timer}>
             <CircularProgressbar
                 value={percentage}
-                text={`${minutes}:${seconds}`}
+                text={`${padMinutes}:${padSeconds}`}
                 styles={buildStyles(progressbar)}
                 strokeWidth={4}
             />

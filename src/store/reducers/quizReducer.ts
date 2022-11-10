@@ -17,10 +17,6 @@ const initialState: QuizState = {
     },
     isFinished: false,
     activeCard: 0,
-    timer: {
-        timeLeft: 2400,
-        isCounting: true,
-    },
 };
 
 export const quizSlice = createSlice({
@@ -47,12 +43,6 @@ export const quizSlice = createSlice({
         },
         setFinished(state, action: PayloadAction<boolean>) {
             state.isFinished = action.payload;
-        },
-        setTimeLeft(state, action: PayloadAction<number>) {
-            state.timer.timeLeft = state.timer.timeLeft - action.payload;
-        },
-        setIsCounting(state, action: PayloadAction<boolean>) {
-            state.timer.isCounting = action.payload;
         },
         setScore(state, action: PayloadAction<number>) {
             state.results.score = state.results.score + action.payload;

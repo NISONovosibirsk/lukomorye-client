@@ -37,7 +37,7 @@ const Draft = () => {
             <QuizFinal />
         ) : (
             <section className={styles.container}>
-                <QuizTimer />
+                <QuizTimer seconds={2400}/>
                 <div className={styles.header}>
                     <h3 className={styles.name}>{quiz.name}</h3>
                     <p className={styles.theme}>{quiz.theme}</p>

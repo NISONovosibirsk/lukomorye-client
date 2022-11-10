@@ -7,12 +7,12 @@ import {
     CatImage03,
     CatImage04,
     CatImage05,
-    FlatLogo,
 } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { quizSlice } from '../../../store/reducers/quizReducer';
 import { Question } from '../../../types/quizTypes';
 import { getRandomObject } from '../../../utils/getRandomObject';
+import { useMemo } from 'react';
 
 interface Props {
     question: Question;
@@ -63,14 +63,17 @@ const QuizForm: React.FC<Props> = ({ question }) => {
         required: 'Заполните это поле',
     };
 
+    const memoizedCat = useMemo(() => {
+        return getRandomObject(catImages)
+    }, [activeCard]);
+
     return (
         <div className={styles.quiz}>
             <div className={styles.image}>
                 {question.image ? (
                     <img src={question.image} />
                 ) : (
-                    // getRandomObject(catImages)
-                    <FlatLogo />
+                        memoizedCat
                 )}
             </div>
             <FormProvider {...methods}>
@@ -90,6 +93,7 @@ const QuizForm: React.FC<Props> = ({ question }) => {
                                         name={'answer'}
                                         value={option}
                                         validations={validations}
+                                        fontSize={'18px'}
                                     />
                                 )
                             )}
@@ -102,6 +106,7 @@ const QuizForm: React.FC<Props> = ({ question }) => {
                                 name={'answer'}
                                 validations={validations}
                                 height={'100%'}
+                                fontSize={'18px'}
                             />
                         </div>
                     )}
