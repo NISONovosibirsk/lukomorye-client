@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { DefaultAvatar, DropDownIcon } from '../../../assets';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { statusSlice } from '../../../store/reducers/statusReducer';
@@ -17,6 +18,9 @@ const Header: React.FC = () => {
 
     return (
         <div className={styles.header}>
+            <Link href={'/user'}>
+                <a className={styles.home}></a>
+            </Link>
             <div className={styles.controls}>
                 {photo ? (
                     <Image src={photo} onClick={handleOpen}/>

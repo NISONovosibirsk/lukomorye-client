@@ -1,10 +1,19 @@
 .header {
     display: grid;
-    grid-template-columns: auto 20%;
+    grid-template-columns: 15% auto 20%;
     grid-template-rows: 1fr;
-    grid-template-areas: 'bar avatar';
+    grid-template-areas: 'home bar avatar';
     background: url('../../../assets/images/header-image.svg') no-repeat;
     background-size: 100vw auto;
+}
+
+.home {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: end;
 }
 
 .controls {

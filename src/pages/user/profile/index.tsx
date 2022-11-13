@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
 import {
     AccountData,
@@ -22,6 +23,8 @@ const Profile: NextPageWithLayout = () => {
     const { updateStudentList, resetForm } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
+    const router = useRouter()
+
     useEffect(() => {
         const getData = async () => {
             try {
@@ -33,7 +36,7 @@ const Profile: NextPageWithLayout = () => {
             }
         };
         getData();
-    }, [modal]);
+    }, [modal, router]);
 
     const handleClose: () => void = () => {
         dispatch(updateModal(false));
