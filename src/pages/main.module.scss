@@ -1,7 +1,7 @@
 .app {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 70px auto;
+    grid-template-rows: 70px auto 40px;
 }
 
 .content {
@@ -98,6 +98,7 @@
 }
 
 .caption {
-    position: absolute;
-    bottom: 40px;
+    // position: absolute;
+    // bottom: 40px;
+    place-self: center;
 }

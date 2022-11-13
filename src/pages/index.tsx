@@ -79,11 +79,11 @@ const Main: NextPageWithLayout = () => {
                         }px)`,
                     }}
                 />
-                <p className={styles.caption}>
-                    Организатор проектов – Центр образовательных технологий
-                    «Лукоморье»
-                </p>
             </div>
+            <p className={styles.caption}>
+                Организатор проектов – Центр образовательных технологий
+                «Лукоморье»
+            </p>
         </div>
     );
 };
