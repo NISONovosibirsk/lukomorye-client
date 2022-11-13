@@ -31,24 +31,33 @@
 
 .earth {
     will-change: transform;
-    width: 48vw;
-    height: 48vw;
+    // width: 48vw;
+    // height: 48vw;
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // margin: auto 0;
+
+    width: 1000px;
+    height: 767px;
     position: absolute;
+    left: 0;
+    right: 0;
     top: 0;
-    bottom: 0;
-    margin: auto 0;
+    bottom: 70px;
+    margin: auto;
 }
 
 .lukomorye {
     position: absolute;
-    width: 23%;
-    right: 27.2%;
-    top: 1.05%;
     cursor: pointer;
     transition: all 200ms ease;
+    width: 231px;
+    top: 12px;
+    right: 271px;
 
     &:hover {
-        scale: 1.1;
+        scale: 1.05;
     }
 }
 
@@ -56,25 +65,25 @@
     position: absolute;
     cursor: pointer;
     transition: all 200ms ease;
-    right: 49.5%;
-    top: 56.2%;
-    width: 19%;
+    left: 304px;
+    bottom: 132px;
+    width: 200px;
 
     &:hover {
-        scale: 1.1;
+        scale: 1.05;
     }
 }
 
 .lestnica {
-    position: absolute;
-    width: 18%;
-    top: 49.5%;
-    right: 19%;
     cursor: pointer;
+    position: absolute;
     transition: all 200ms ease;
+    width: 183px;
+    bottom: 204px;
+    right: 190px;
 
     &:hover {
-        scale: 1.1;
+        scale: 1.05;
     }
 }
 
@@ -98,7 +107,105 @@
 }
 
 .caption {
-    // position: absolute;
-    // bottom: 40px;
     place-self: center;
+}
+
+@media screen and (max-width: 1680px) {
+    .earth {
+        width: 900px;
+        height: 690px;
+    }
+
+    .lukomorye {
+        width: 218px;
+        top: 8px;
+        right: 239px;
+    }
+
+    .lestnica {
+        width: 178px;
+        bottom: 182px;
+        right: 171px;
+    }
+
+    .zolotoy {
+        width: 184px;
+        bottom: 116px;
+        left: 278px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .earth {
+        width: 800px;
+        height: 613px;
+    }
+
+    .lukomorye {
+        width: 201px;
+        top: 7px;
+        right: 206px;
+    }
+
+    .lestnica {
+        width: 159px;
+        bottom: 161px;
+        right: 151px;
+    }
+
+    .zolotoy {
+        width: 163px;
+        bottom: 105px;
+        left: 242px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .earth {
+        width: 650px;
+        height: 499px;
+    }
+
+    .lukomorye {
+        width: 157px;
+        top: 6px;
+        right: 176px;
+    }
+
+    .lestnica {
+        width: 132px;
+        bottom: 132px;
+        right: 122px;
+    }
+
+    .zolotoy {
+        width: 142px;
+        bottom: 83px;
+        left: 190px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .earth {
+        width: 600px;
+        height: 460px;
+    }
+
+    .lukomorye {
+        width: 147px;
+        top: 5px;
+        right: 158px;
+    }
+
+    .lestnica {
+        width: 121px;
+        bottom: 121px;
+        right: 108px;
+    }
+
+    .zolotoy {
+        width: 124px;
+        bottom: 78px;
+        left: 181px;
+    }
 }

@@ -44,14 +44,14 @@ const Main: NextPageWithLayout = () => {
                         }px)`,
                     }}
                 />
-                <ParallaxBackground
+                {/* <ParallaxBackground
                     className={styles.background}
                     style={{
                         transform: `translate(-${cursor.x / 120}px, -${
                             cursor.y / 80
                         }px)`,
                     }}
-                />
+                /> */}
                 <div
                     className={styles.earth}
                     style={{
