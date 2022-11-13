@@ -20,24 +20,17 @@
 
 .background {
     will-change: transform;
-    width: 55vw;
-    height: 55vw;
     position: absolute;
+    left: 5%;
+    right: 0;
     top: 0;
-    bottom: 10%;
-    left: 24%;
-    margin: auto 0;
+    bottom: 0;
+    margin: auto;
+    width: 1100px;
 }
 
 .earth {
     will-change: transform;
-    // width: 48vw;
-    // height: 48vw;
-    // position: absolute;
-    // top: 0;
-    // bottom: 0;
-    // margin: auto 0;
-
     width: 1000px;
     height: 767px;
     position: absolute;
@@ -111,6 +104,10 @@
 }
 
 @media screen and (max-width: 1680px) {
+    .background {
+        width: 1000px;
+    }
+
     .earth {
         width: 900px;
         height: 690px;
@@ -136,6 +133,10 @@
 }
 
 @media screen and (max-width: 1440px) {
+    .background {
+        width: 900px;
+    }
+
     .earth {
         width: 800px;
         height: 613px;
@@ -161,6 +162,11 @@
 }
 
 @media screen and (max-width: 1280px) {
+
+    .background {
+        width: 750px;
+    }
+
     .earth {
         width: 650px;
         height: 499px;
@@ -186,6 +192,11 @@
 }
 
 @media screen and (max-width: 1024px) {
+
+    .background {
+        width: 680px;
+    }
+
     .earth {
         width: 600px;
         height: 460px;
