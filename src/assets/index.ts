@@ -9,16 +9,22 @@ export { default as RightIcon } from './icons/quizIcons/right-icon.svg';
 export { default as WrongIcon } from './icons/quizIcons/wrong-icon.svg';
 
 // QUIZ IMAGES //
-export {default as CatImage01} from './images/quiz/cat-image-01.svg';
-export {default as CatImage02} from './images/quiz/cat-image-02.svg';
-export {default as CatImage03} from './images/quiz/cat-image-03.svg';
-export {default as CatImage04} from './images/quiz/cat-image-04.svg';
-export {default as CatImage05} from './images/quiz/cat-image-05.svg';
+export { default as CatImage01 } from './images/quiz/cat-image-01.svg';
+export { default as CatImage02 } from './images/quiz/cat-image-02.svg';
+export { default as CatImage03 } from './images/quiz/cat-image-03.svg';
+export { default as CatImage04 } from './images/quiz/cat-image-04.svg';
+export { default as CatImage05 } from './images/quiz/cat-image-05.svg';
 
 // HEADER //
 export { default as SettingsIcon } from './icons/headerIcons/settings-icon.svg';
 export { default as LogOutIcon } from './icons/headerIcons/logout-icon.svg';
 export { default as DropDownIcon } from './icons/headerIcons/dropdown-icon.svg';
+export { default as CatUser } from './icons/headerIcons/cat-user-icon.svg';
+export { default as CatProfile } from './icons/headerIcons/cat-profile-icon.svg';
+export { default as CatFinal } from './icons/headerIcons/cat-final-icon.svg';
+export { default as CatRight } from './icons/headerIcons/cat-right-icon.svg';
+export { default as CatStart } from './icons/headerIcons/cat-start-icon.svg';
+export { default as CatWrong } from './icons/headerIcons/cat-wrong-icon.svg';
 
 // PROFILE //
 export { default as DefaultAvatar } from './icons/profileIcons/default-avatar.svg';

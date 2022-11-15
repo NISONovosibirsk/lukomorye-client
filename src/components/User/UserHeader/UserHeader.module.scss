@@ -1,5 +1,6 @@
 .header {
     display: grid;
+    height: 80px;
     grid-template-columns: 15% auto 20%;
     grid-template-rows: 1fr;
     grid-template-areas: 'home bar avatar';
@@ -7,7 +8,16 @@
     background-size: 100vw auto;
 }
 
+.cat {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 149px;
+}
+
 .home {
+    grid-area: home;
     width: 60px;
     height: 60px;
     background: white;

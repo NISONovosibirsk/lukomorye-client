@@ -9,7 +9,7 @@ import { quizSlice } from '../../store/reducers/quizReducer';
 import { studentSlice } from '../../store/reducers/studentReducer';
 
 const User: NextPageWithLayout = () => {
-    const { updateModal } = statusSlice.actions;
+    const { updateModal, updateHeader } = statusSlice.actions;
     // const { updateQuizList } = quizSlice.actions;
     // const { quizList } = useAppSelector(state => state.quizReducer);
     const dispatch = useAppDispatch();
@@ -17,6 +17,7 @@ const User: NextPageWithLayout = () => {
     const [quizList, setQuizList] = useState([]);
 
     useEffect(() => {
+        dispatch(updateHeader('user'))
         const getData = async () => {
             try {
                 await axios.get('quizMock.json').then(response => {

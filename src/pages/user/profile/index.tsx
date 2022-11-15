@@ -19,13 +19,14 @@ import styles from './profile.module.scss';
 const Profile: NextPageWithLayout = () => {
     const { name } = useAppSelector(state => state.userReducer);
     const { modal } = useAppSelector(state => state.statusReducer);
-    const { updateModal } = statusSlice.actions;
+    const { updateModal, updateHeader } = statusSlice.actions;
     const { updateStudentList, resetForm } = studentSlice.actions;
     const dispatch = useAppDispatch();
 
-    const router = useRouter()
+    const router = useRouter();
 
     useEffect(() => {
+        dispatch(updateHeader('profile'));
         const getData = async () => {
             try {
                 await axios.get('../quizMock.json').then(response => {

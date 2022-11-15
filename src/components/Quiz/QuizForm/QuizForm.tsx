@@ -13,6 +13,7 @@ import { quizSlice } from '../../../store/reducers/quizReducer';
 import { Question } from '../../../types/quizTypes';
 import { getRandomObject } from '../../../utils/getRandomObject';
 import { useMemo } from 'react';
+import { statusSlice } from '../../../store/reducers/statusReducer';
 
 interface Props {
     question: Question;
@@ -26,6 +27,7 @@ const QuizForm: React.FC<Props> = ({ question }) => {
     const dispatch = useAppDispatch();
     const { updateActive, setAnswer, setFinished, setScore } =
         quizSlice.actions;
+    const { updateHeader } = statusSlice.actions;
     const { activeCard, quiz } = useAppSelector(state => state.quizReducer);
 
     const format = (text: string | number) => {
@@ -50,10 +52,15 @@ const QuizForm: React.FC<Props> = ({ question }) => {
         };
         dispatch(setAnswer({ index: activeCard, answer: newState }));
         if (newState.status === 'right') {
+            dispatch(updateHeader('right'));
             question.score
                 ? dispatch(setScore(question.score))
                 : dispatch(setScore(quiz.defaultScore));
         }
+        // if (newState.status === 'wrong') {
+        //     dispatch(updateHeader('wrong'));
+        // }
+        newState.status === 'wrong' && dispatch(updateHeader('wrong'));
         activeCard + 1 >= quiz.questions.length
             ? dispatch(setFinished(true))
             : dispatch(updateActive(activeCard + 1));
@@ -64,17 +71,13 @@ const QuizForm: React.FC<Props> = ({ question }) => {
     };
 
     const memoizedCat = useMemo(() => {
-        return getRandomObject(catImages)
+        return getRandomObject(catImages);
     }, [activeCard]);
 
     return (
         <div className={styles.quiz}>
             <div className={styles.image}>
-                {question.image ? (
-                    <img src={question.image} />
-                ) : (
-                        memoizedCat
-                )}
+                {question.image ? <img src={question.image} /> : memoizedCat}
             </div>
             <FormProvider {...methods}>
                 <form

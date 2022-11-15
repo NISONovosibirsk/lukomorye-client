@@ -31,6 +31,7 @@ export interface StatusState {
     dropDown: boolean;
     modal: boolean;
     menu: boolean;
+    header: string;
 }
 
 export interface QuizState {

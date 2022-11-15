@@ -5,6 +5,7 @@ const initialState: StatusState = {
     dropDown: false,
     modal: false,
     menu: false,
+    header: '',
 };
 
 export const statusSlice = createSlice({
@@ -19,6 +20,9 @@ export const statusSlice = createSlice({
         },
         updateMenu(state, action: PayloadAction<boolean>) {
             state.menu = action.payload;
+        },
+        updateHeader(state, action: PayloadAction<string>) {
+            state.header = action.payload;
         },
     },
 });
