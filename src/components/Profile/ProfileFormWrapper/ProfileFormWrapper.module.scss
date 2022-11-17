@@ -61,3 +61,45 @@
         width: 326px;
     }
 }
+
+@media screen and (max-width: 970px) {
+    .formWrapper {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .formWrapper {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formWrapper {
+        width: 335px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .formWrapper {
+        width: 570px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .formWrapper {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .formWrapper {
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .formWrapper {
+        width: 300px;
+    }
+}

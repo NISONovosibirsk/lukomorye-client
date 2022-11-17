@@ -33,6 +33,7 @@
         button {
             grid-area: Button;
             place-self: center;
+            min-width: 100px;
         }
     }
 }
@@ -122,5 +123,29 @@
     to {
         transform: translateX(-100px);
         opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .teacherForm {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .studentsForm {
+        grid-template-rows: repeat(auto-fill, calc(9vh + 5px));
+        height: 75vh;
+    }
+
+    .header {
+        justify-content: end;
+    }
+
+    .teacherForm {
+        h4 {
+            display: none;
+        }
     }
 }

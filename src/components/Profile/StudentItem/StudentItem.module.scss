@@ -7,7 +7,7 @@
     padding: {
         left: 5px;
         right: 5px;
-    };
+    }
 }
 
 .remove {
@@ -19,5 +19,32 @@
     &:hover {
         scale: 1.1;
         fill: #6d6d6d;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .student {
+        grid-template-columns: 45% 20% 15% auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .student {
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: repeat(2, 4.5vh);
+        grid-template-areas:
+            'input input input'
+            'select score remove';
+        row-gap: 5px;
+        column-gap: 5px;
+        width: 95%;
+    }
+
+    .name {
+        grid-area: input;
+    }
+
+    .remove {
+        place-self: center;
     }
 }

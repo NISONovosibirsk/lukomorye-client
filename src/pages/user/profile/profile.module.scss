@@ -37,3 +37,18 @@
     flex-direction: row;
     gap: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .generalForms {
+        flex-direction: column;
+    }
+
+    .header {
+        place-self: center;
+        margin: 0;
+    }
+
+    .content {
+        justify-items: center;
+    }
+}

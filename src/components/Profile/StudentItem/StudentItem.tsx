@@ -66,14 +66,16 @@ const StudentItem: React.FC<Props> = ({ student, isDisabled, index }) => {
 
     return (
         <div className={styles.student}>
-            <Input
-                required={true}
-                value={student.name}
-                isDisabled={isDisabled}
-                onChange={handleEdit}
-                name={'name'}
-                error={inputError}
-            />
+            <div className={styles.name}>
+                <Input
+                    required={true}
+                    value={student.name}
+                    isDisabled={isDisabled}
+                    onChange={handleEdit}
+                    name={'name'}
+                    error={inputError}
+                />
+            </div>
             <Select
                 value={student.grade}
                 options={gradeList}

@@ -40,7 +40,7 @@ const TeacherForm: React.FC = () => {
                     }
                     onClick={handleAdd}
                 >
-                    Добавить участника
+                    <p>Добавить участника</p>
                     <AddIcon />
                 </div>
             </div>
