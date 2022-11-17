@@ -5,7 +5,7 @@
     grid-template-rows: 1fr;
     grid-template-areas: 'home bar avatar';
     background: url('../../../assets/images/header-image.svg') no-repeat;
-    background-size: 100vw auto;
+    background-size: cover;
 }
 
 .cat {
@@ -44,4 +44,27 @@
     border-radius: 50%;
     background: white;
     cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: 'home avatar';
+        padding: {
+            left: 20px;
+            right: 20px;
+        };
+    }
+
+    .cat {
+        display: none;
+    }
+
+    .home {
+        justify-self: start;
+    }
+
+    .controls {
+        justify-self: end;
+    }
 }

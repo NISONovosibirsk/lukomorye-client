@@ -78,3 +78,27 @@
         width: 280px;
     }
 }
+
+@media only screen and (max-width: 970px) {
+    .card {
+        width: 240px;
+    }
+}
+
+@media only screen and (max-width: 808px) {
+    .card {
+        width: 280px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .card {
+        width: 420px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .card {
+        width: 300px;
+    }
+}

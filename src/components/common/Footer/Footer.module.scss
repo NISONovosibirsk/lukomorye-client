@@ -38,3 +38,24 @@
         align-items: center;
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .footer {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .links {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer {
+        grid-template-columns: 100%;
+    }
+
+    .contacts {
+        display: none;
+    }
+}

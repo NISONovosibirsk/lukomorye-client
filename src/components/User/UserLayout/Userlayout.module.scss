@@ -3,10 +3,10 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 80px auto 130px;
-    grid-template-areas:
-        'userHeader'
-        'userBody'
-        'userFooter';
+    // grid-template-areas:
+    //     'userHeader'
+    //     'userBody'
+    //     'userFooter';
 }
 
 .body {
@@ -23,5 +23,11 @@
 @media only screen and (max-width: 1440px) {
     .body {
         grid-template-columns: 270px auto;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .body {
+        grid-template-columns: 100%;
     }
 }

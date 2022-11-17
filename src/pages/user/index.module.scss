@@ -60,10 +60,46 @@
     }
 }
 
-// @media only screen and (max-width: 1024px) {
-//     .home {
-//         ul {
-//             grid-template-columns: repeat(auto-fill, minmax(300px, max-content));
-//         }
-//     }
-// }
+@media only screen and (max-width: 970px) {
+    .home {
+        ul {
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(240px, max-content)
+            );
+        }
+    }
+}
+
+@media only screen and (max-width: 808px) {
+    .home {
+        ul {
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(280px, max-content)
+            );
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .home {
+        ul {
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(420px, max-content)
+            );
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .home {
+        ul {
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(300px, max-content)
+            );
+        }
+    }
+}
