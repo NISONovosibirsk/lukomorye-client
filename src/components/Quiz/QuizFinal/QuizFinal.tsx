@@ -32,7 +32,7 @@ const QuizFinal: React.FC = () => {
             <div className={styles.catWrapper}>
                 <CatFireworkIcon className={styles.cat} />
                 <div className={styles.resultsWrapper}>
-                    <p className={styles.congratulate}>ПОЗДРАВЛЯЮ</p>
+                    <p className={styles.congratulate}>ПОЗДРАВЛЯЮ!</p>
                     <p className={styles.result}>ТВОЙ РЕЗУЛЬТАТ</p>
                     <div className={styles.score}>
                         <StarIcon />
@@ -54,7 +54,6 @@ const QuizFinal: React.FC = () => {
             <QuizProgress />
             <Button
                 title={'Посмотреть неправильные ответы'}
-                width={'350px'}
                 onClick={handleModal}
             />
             <Modal onClose={handleClose}>

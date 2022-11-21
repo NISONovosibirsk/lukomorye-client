@@ -12,7 +12,7 @@
     background: #f2f2f2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     user-select: none;
-    top: 8vh;
+    top: 75px;
     padding: 1.5vh;
     display: grid;
     grid-template-rows: 20% auto;
@@ -42,5 +42,11 @@
     h4 {
         color: #545454;
         place-self: center;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .dropDown {
+        right: 0;
     }
 }

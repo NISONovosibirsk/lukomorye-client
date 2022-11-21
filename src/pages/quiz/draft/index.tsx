@@ -32,26 +32,26 @@ const Draft = () => {
         getQuiz();
     }, []);
 
-    return (
-        isFinished ? (
-            <QuizFinal />
-        ) : (
-            <section className={styles.container}>
-                <QuizTimer seconds={2400}/>
-                <div className={styles.header}>
+    return isFinished ? (
+        <QuizFinal />
+    ) : (
+        <section className={styles.container}>
+            <div className={styles.header}>
+                <div className={styles.info}>
                     <h3 className={styles.name}>{quiz.name}</h3>
                     <p className={styles.theme}>{quiz.theme}</p>
                     <h4>{quiz.terms}</h4>
                 </div>
-                {quiz.questions.map(
-                    (question, index) =>
-                        index === activeCard && (
-                            <QuizForm key={index} question={question} />
-                        )
-                )}
-                <QuizProgress />
-            </section>
-        )
+                <QuizTimer seconds={2400} />
+            </div>
+            {quiz.questions.map(
+                (question, index) =>
+                    index === activeCard && (
+                        <QuizForm key={index} question={question} />
+                    )
+            )}
+            <QuizProgress />
+        </section>
     );
 };
 

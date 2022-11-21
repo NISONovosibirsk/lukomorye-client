@@ -1,10 +1,18 @@
-import { useAppSelector } from '../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { StatisticsItem } from '../../';
 import styles from './QuizStatistics.module.scss';
 import { RightIcon, UndoneIcon, WrongIcon } from '../../../assets';
+import { Button } from '../../';
+import { statusSlice } from '../../../store/reducers/statusReducer';
 
 const QuizStatistics: React.FC = () => {
     const { quiz, results } = useAppSelector(state => state.quizReducer);
+    const { updateModal } = statusSlice.actions;
+    const dispatch = useAppDispatch();
+
+    const handleClose = () => {
+        dispatch(updateModal(false));
+    };
 
     return (
         <div className={styles.container}>
@@ -44,6 +52,7 @@ const QuizStatistics: React.FC = () => {
                     ))}
                 </ul>
             </div>
+            <Button title={'Изучил'} onClick={handleClose} />
         </div>
     );
 };

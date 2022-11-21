@@ -77,7 +77,11 @@ const QuizForm: React.FC<Props> = ({ question }) => {
     return (
         <div className={styles.quiz}>
             <div className={styles.image}>
-                {question.image ? <img src={question.image} /> : memoizedCat}
+                {question.image ? (
+                    <img src={question.image} />
+                ) : (
+                    <div className={styles.cat}>{memoizedCat}</div>
+                )}
             </div>
             <FormProvider {...methods}>
                 <form
