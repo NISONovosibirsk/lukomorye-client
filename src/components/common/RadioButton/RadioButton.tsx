@@ -6,7 +6,7 @@ interface Props {
     title: string;
     name: string;
     value: string;
-    validations: any;
+    validations?: any;
     fontSize?: string;
 }
 
