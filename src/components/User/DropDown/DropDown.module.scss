@@ -20,11 +20,13 @@
     gap: 10px;
     animation: appear 0.3s forwards;
     z-index: 1;
+    width: 220px;
 
     li {
         cursor: pointer;
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 15% auto;
         gap: 5px;
         padding: 5px;
         border-radius: 5px;
