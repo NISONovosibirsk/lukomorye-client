@@ -7,7 +7,7 @@ const DropDown: React.FC = () => {
     return (
         <ul className={styles.dropDown}>
             <h4>Ваш профиль</h4>
-            <li className={''}>
+            <li>
                 <SettingsIcon />
                 <Link href={'/user/profile'}>
                     <a>Настройки</a>

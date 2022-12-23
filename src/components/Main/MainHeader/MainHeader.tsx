@@ -21,7 +21,7 @@ const MainHeader: React.FC = () => {
                 onClick={handleMenu}
             ></div>
             <div className={styles.rightBlock}>
-                <Link href={'/sign_in'}>Вход</Link>
+                <Link href={'/sign-in'}>Вход</Link>
                 <div className={styles.phone}>
                     <PhoneIcon />
                     <p>(383) 35 12 75</p>

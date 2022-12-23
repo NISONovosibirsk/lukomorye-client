@@ -8,35 +8,37 @@
         }
     }
 
+    border-radius: 5px;
     position: absolute;
     background: #f2f2f2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     user-select: none;
     top: 75px;
-    padding: 1.5vh;
+    padding: 10px;
     display: grid;
     grid-template-rows: 20% auto;
-    row-gap: 1vh;
+    gap: 10px;
     animation: appear 0.3s forwards;
     z-index: 1;
+    width: 220px;
 
     li {
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.5vw;
-        padding: 10px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 15% auto;
+        gap: 5px;
+        padding: 5px;
         border-radius: 5px;
 
         &:hover {
             background: #dadada;
             transition: background 0.3s ease;
         }
-    }
 
-    li.disabled {
-        pointer-events: none;
-        opacity: 0.5;
+        a {
+            width: 100%;
+        }
     }
 
     h4 {
