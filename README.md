@@ -4,6 +4,14 @@
   <img width="460" height="300" src="(https://user-images.githubusercontent.com/79412122/210277845-2fe1ea04-c1a9-4c67-b8d6-4ac3c6658956.png">
 </p>
 
+<p align="center">
+  ![Лукоморье](https://user-images.githubusercontent.com/79412122/210277845-2fe1ea04-c1a9-4c67-b8d6-4ac3c6658956.png)
+</p>
+
+<img align="center">
+  ![Лукоморье](https://user-images.githubusercontent.com/79412122/210277845-2fe1ea04-c1a9-4c67-b8d6-4ac3c6658956.png)
+<img>
+
 #### Front-end часть веб-приложения для одноименной игры-олимпиады
 
 ## 💻 Технологии использованные для создания
