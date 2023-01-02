@@ -1,6 +1,12 @@
-                ![Лукоморье](https://user-images.githubusercontent.com/79412122/210277621-ff69d11e-6a3c-4055-b089-3fc9dc8c3d92.png)
+![Лукоморье](https://user-images.githubusercontent.com/79412122/210277845-2fe1ea04-c1a9-4c67-b8d6-4ac3c6658956.png)
 
+#### Front-end часть приложения для одноименной игры-олимпиады
 
+## 💻 Технологии
+* NEXT.js
+* React
+* SCSS
+* css-modules
 
 
 
