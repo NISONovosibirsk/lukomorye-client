@@ -34,5 +34,7 @@ yarn dev
 
 ![parallax](https://user-images.githubusercontent.com/79412122/210280286-24624508-17c2-4cf5-9e05-63adc4096631.gif)
 
+<img src="https://user-images.githubusercontent.com/79412122/210280298-fa6f5f6e-f1bb-4dc2-b410-5e6dd0a6e385.png">
+
 ![Снимок экрана 2023-01-03 в 04 38 46](https://user-images.githubusercontent.com/79412122/210280298-fa6f5f6e-f1bb-4dc2-b410-5e6dd0a6e385.png)
 
